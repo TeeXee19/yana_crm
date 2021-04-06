@@ -10,11 +10,12 @@
     <link rel="shortcut icon" href="assets/images/logo/favicon.png">
 
     <!-- page css -->
-    <link href="assets/vendors/datatables/dataTables.bootstrap.min.css" rel="stylesheet">
+    <link href="assets/vendors/bootstrap-datepicker/bootstrap-datepicker.min.css" rel="stylesheet">
 
     <!-- Core css -->
     <link href="assets/css/app.min.css" rel="stylesheet">
-    <link href="assets/css/custom.css" rel="stylesheet">
+        <link href="assets/css/custom.css" rel="stylesheet">
+
 
 </head>
 
@@ -24,15 +25,15 @@
             <!-- Header START -->
             <div class="header">
                 <div class="logo logo-dark">
-                    <a href="index.html">
+                     <a href="index.html">
                         <img src="assets/images/logo/logo.png" class="logo-handle" alt="Logo">
                         <!-- <img class="logo-fold logo-fold-handle" src="assets/images/logo/logo-fold.png" alt="Logo"> -->
                     </a>
                 </div>
                 <div class="logo logo-white">
-                    <a href="index.html">
-                        <img src="assets/images/logo/logo-white.png" alt="Logo">
-                        <img class="logo-fold" src="assets/images/logo/logo-fold-white.png" alt="Logo">
+                     <a href="index.html">
+                        <img src="assets/images/logo/logo.png" class="logo-handle" alt="Logo">
+                        <img class="logo-fold logo-fold-handle" src="assets/images/logo/logo-fold.png" alt="Logo">
                     </a>
                 </div>
                 <div class="nav-wrap">
@@ -207,13 +208,13 @@
                                 </span>
                             </a>
                             <ul class="dropdown-menu">
-                                <li>
+                                <li class="active">
                                     <a href="create-customer.html">Create Customer</a>
                                 </li>
-                                <li >
+                                <li>
                                     <a href="customers.html">Customer List</a>
                                 </li>
-                                <li class="active">
+                                <li>
                                     <a href="deleted-customers.html">Deleted Customers</a>
                                 </li>
                             </ul>
@@ -325,106 +326,57 @@
 
             <!-- Page Container START -->
             <div class="page-container">
-
+                
                 <!-- Content Wrapper START -->
                 <div class="main-content">
-                    <div class="page-header">
-                        <h2 class="header-title">Deleted Customer</h2>
-                        <div class="header-sub-title">
-                            <nav class="breadcrumb breadcrumb-dash">
-                                <a href="#" class="breadcrumb-item"><i class="anticon anticon-home m-r-5"></i>Home</a>
-                                <a class="breadcrumb-item" href="#">Customers</a>
-                                <span class="breadcrumb-item active">Deleted Customers</span>
-                            </nav>
-                        </div>
-                    </div>
                     <div class="card">
-                        <div class="card-body">   
-                            <div class="float-right text-right m-b-30">
-                                <button class="btn btn-primary">
-                                    <i class="anticon anticon-file-excel m-r-5"></i>
-                                    <span>Export</span>
-                                </button>
-                            </div>
-                            <div class="table-responsive">
-                                <table class="table table-hover e-commerce-table">
-                                    <thead>
-                                        <tr>
-                                            <th>
-                                                <div class="checkbox">
-                                                    <input id="checkAll" type="checkbox">
-                                                    <label for="checkAll" class="m-b-0"></label>
+                        <div class="card-body">
+                            <h4>Product Details</h4>
+                            <div class="m-t-25">
+                                <form>
+                                    <div class="form-row">
+                                        <div class="form-group col-md-6">
+                                            <label for="productName">Product Name <span>*</span></label>
+                                            <input type="text" class="form-control" id="productName" placeholder="Product Name">
+                                        </div>
+                                        <div class="form-group col-md-6">
+                                           <label for="amount">Amount <span>*</span></label>
+                                           <div class="input-group mb-3">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text">&#8358;</span>
                                                 </div>
-                                            </th>
-                                            <th>ID</th>
-                                            <th>Customer Name</th>
-                                            <th>Phone No</th>
-                                            <th>Address</th>
-                                            <th></th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>
-                                                <div class="checkbox">
-                                                    <input id="check-item-1" type="checkbox">
-                                                    <label for="check-item-1" class="m-b-0"></label>
+                                                <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)" onkeypress="return /\d/.test(String.fromCharCode(((event||window.event).which||(event||window.event).which)));" >
+                                                <div class="input-group-append">
+                                                    <span class="input-group-text">.00</span>
                                                 </div>
-                                            </td>
-                                            <td>
-                                                #5331
-                                            </td>
-                                            <td>
-                                                <div class="d-flex align-items-center">
-                                                    <h6 class="m-b-0">Erin Gonzales</h6>
-                                                </div>
-                                            </td>
-                                            <td>08099338843</td>
-                                            <td>No. 2 My House Road, Somewhere</td>
-                                            <td class="text-right">
-                                                <button class="btn btn-icon btn-hover btn-sm btn-rounded pull-right">
-                                                    <i class="anticon anticon-eye" data-toggle="tooltip" data-placement="bottom" title="View"></i>
-                                                </button>
-                                                <button class="btn btn-icon btn-hover btn-sm btn-rounded pull-right">
-                                                    <i class="anticon anticon-undo" data-toggle="tooltip" data-placement="bottom" title="Restore"></i>
-                                                </button>
-                                            </td>
-                                        </tr>
-
-                                        <tr>
-                                            <td>
-                                                <div class="checkbox">
-                                                    <input id="check-item-1" type="checkbox">
-                                                    <label for="check-item-1" class="m-b-0"></label>
-                                                </div>
-                                            </td>
-                                            <td>
-                                                #5331
-                                            </td>
-                                            <td>
-                                                <div class="d-flex align-items-center">
-                                                    <h6 class="m-b-0">Monkey D. Luffy</h6>
-                                                </div>
-                                            </td>
-                                            <td>08099338843</td>
-                                            <td>East Blue</td>
-                                            <td class="text-right">
-                                                <button class="btn btn-icon btn-hover btn-sm btn-rounded pull-right">
-                                                    <i class="anticon anticon-eye" data-toggle="tooltip" data-placement="bottom" title="View"></i>
-                                                </button>
-                                                <button class="btn btn-icon btn-hover btn-sm btn-rounded pull-right">
-                                                    <i class="anticon anticon-undo" data-toggle="tooltip" data-placement="bottom" title="Restore"></i>
-                                                </button>
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="form-group col-md-6">
+                                            <label for="category">Category <span>*</span></label>
+                                            <select class="custom-select" style="min-width: 180px;" required>
+                                                <option selected>Select Category</option>
+                                                <option value="homeDeco">Home Decoration</option>
+                                                <option value="eletronic">Eletronic</option>
+                                                <option value="jewellery">Jewellery</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group col-md-6">
+                                            <label for="availability">Availability <span>*</span></label>
+                                            <select class="custom-select" style="min-width: 180px;" required>
+                                                <option selected>Select Availability</option>
+                                                <option value="inStock">In Stock</option>
+                                                <option value="outOfStock">Out Of Stock</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <button type="submit" class="btn btn-primary float-right">Create Product</button>
+                                </form>
                             </div>
                         </div>
                     </div>
                 </div>
-                <!-- Content Wrapper END -->
-
                 <!-- Footer START -->
                 <footer class="footer">
                     <div class="footer-content">
@@ -610,9 +562,8 @@
     <script src="assets/js/vendors.min.js"></script>
 
     <!-- page js -->
-    <script src="assets/vendors/datatables/jquery.dataTables.min.js"></script>
-    <script src="assets/vendors/datatables/dataTables.bootstrap.min.js"></script>
-    <script src="assets/js/pages/e-commerce-order-list.js"></script>
+    <script src="assets/vendors/chartjs/Chart.min.js"></script>
+    <script src="assets/js/pages/dashboard-crm.js"></script>
 
     <!-- Core JS -->
     <script src="assets/js/app.min.js"></script>
