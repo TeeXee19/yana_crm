@@ -17,7 +17,7 @@ const ThemeConstant = {
     greenLight: 'rgba(82, 196, 26, 0.1)',
     cyan: "#05c9a7",
     cyanLight: 'rgba(0, 201, 167, 0.1)',
-    blue: '#3f87f5',
+    blue: '#5bbb6a',
     blueLight: 'rgba(63, 135, 245, 0.15)',
     geekBlue: '#2f54eb',
     geekBlueLight: 'rgba(47, 84, 235, 0.1)',

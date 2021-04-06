@@ -10,10 +10,11 @@
     <link rel="shortcut icon" href="assets/images/logo/favicon.png">
 
     <!-- page css -->
-    <link href="assets/vendors/bootstrap-datepicker/bootstrap-datepicker.min.css" rel="stylesheet">
+    <link href="assets/vendors/datatables/dataTables.bootstrap.min.css" rel="stylesheet">
 
     <!-- Core css -->
     <link href="assets/css/app.min.css" rel="stylesheet">
+    <link href="assets/css/custom.css" rel="stylesheet">
 
 </head>
 
@@ -24,8 +25,8 @@
             <div class="header">
                 <div class="logo logo-dark">
                     <a href="index.html">
-                        <img src="assets/images/logo/logo.png" alt="Logo">
-                        <img class="logo-fold" src="assets/images/logo/logo-fold.png" alt="Logo">
+                        <img src="assets/images/logo/logo.png" class="logo-handle" alt="Logo">
+                        <img class="logo-fold logo-fold-handle" src="assets/images/logo/logo-fold.png" alt="Logo">
                     </a>
                 </div>
                 <div class="logo logo-white">
@@ -206,11 +207,11 @@
                                 </span>
                             </a>
                             <ul class="dropdown-menu">
-                                <li class="active">
+                                <li>
                                     <a href="create-customer.html">Create Customer</a>
                                 </li>
-                                <li>
-                                    <a href="customers.html">Customer List</a>
+                                <li class="active">
+                                    <a href="customer-list.html">Customer List</a>
                                 </li>
                                 <li>
                                     <a href="deleted-customers.html">Deleted Customers</a>
@@ -324,60 +325,128 @@
 
             <!-- Page Container START -->
             <div class="page-container">
-                
+
                 <!-- Content Wrapper START -->
                 <div class="main-content">
+                    <div class="page-header">
+                        <h2 class="header-title">Orders List</h2>
+                        <div class="header-sub-title">
+                            <nav class="breadcrumb breadcrumb-dash">
+                                <a href="#" class="breadcrumb-item"><i class="anticon anticon-home m-r-5"></i>Home</a>
+                                <a class="breadcrumb-item" href="#">Apps</a>
+                                <a class="breadcrumb-item" href="#">E-commerce</a>
+                                <span class="breadcrumb-item active">Orders List</span>
+                            </nav>
+                        </div>
+                    </div>
                     <div class="card">
                         <div class="card-body">
-                            <h4>Customer Details</h4>
-                            <div class="m-t-25">
-                                <form>
-                                    <div class="form-row">
-                                        <div class="form-group col-md-6">
-                                            <label for="firstName">First Name <span>*</span></label>
-                                            <input type="text" class="form-control" id="firstName" placeholder="firstName">
-                                        </div>
-                                        <div class="form-group col-md-6">
-                                            <label for="middleName">Middle Name <span>*</span></label>
-                                            <input type="text" class="form-control" id="middleName" placeholder="middleName">
-                                        </div>
-                                    </div>
-                                    <div class="form-row">
-                                        <div class="form-group col-md-6">
-                                            <label for="lastName">Last Name <span>*</span></label>
-                                            <input type="text" class="form-control" id="lastName" placeholder="lastName">
-                                        </div>
-                                        <div class="form-group col-md-6">
-                                            <label for="inputEmail4">Email</label>
-                                            <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
+                            <div class="row m-b-30">
+                                <div class="col-lg-8">
+                                    <div class="d-md-flex">
+                                        <div class="m-b-10">
+                                            <select class="custom-select" style="min-width: 180px;">
+                                                <option selected>Status</option>
+                                                <option value="all">All</option>
+                                                <option value="approved">Approved</option>
+                                                <option value="pending">Pending</option>
+                                                <option value="rejected">Rejected</option>
+                                            </select>
                                         </div>
                                     </div>
-                                    <div class="form-row">
-                                        <div class="form-group col-md-6">
-                                            <label for="mobileNo1">Mobile No. 1 <span>*</span></label>
-                                            <input type="tel" class="form-control" id="mobileNo1" placeholder="mobileNo1">
-                                        </div>
-                                        <div class="form-group col-md-6">
-                                            <label for="mobileNo2">Mobile No. 2</label>
-                                            <input type="tel" class="form-control" id="mobileNo2" placeholder="mobileNo2">
-                                        </div>
-                                    </div>
-                                    <div class="form-row">
-                                        <div class="form-group col-md-6">
-                                            <label for="location">Location</label>
-                                            <input type="text" class="form-control" id="location">
-                                        </div>
-                                         <div class="form-group col-md-6">
-                                            <label for="address">Address <span>*</span></label>
-                                            <input type="text" class="form-control" id="address" placeholder="1234 Main St">
-                                        </div>
-                                    </div>
-                                    <button type="submit" class="btn btn-primary float-right">Create Customer</button>
-                                </form>
+                                </div>
+                                <div class="col-lg-4 text-right">
+                                    <button class="btn btn-primary">
+                                        <i class="anticon anticon-file-excel m-r-5"></i>
+                                        <span>Export</span>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="table-responsive">
+                                <table class="table table-hover e-commerce-table">
+                                    <thead>
+                                        <tr>
+                                            <th>
+                                                <div class="checkbox">
+                                                    <input id="checkAll" type="checkbox">
+                                                    <label for="checkAll" class="m-b-0"></label>
+                                                </div>
+                                            </th>
+                                            <th>ID</th>
+                                            <th>Customer Name</th>
+                                            <th>Phone No</th>
+                                            <th>Address</th>
+                                            <th></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <div class="checkbox">
+                                                    <input id="check-item-1" type="checkbox">
+                                                    <label for="check-item-1" class="m-b-0"></label>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                #5331
+                                            </td>
+                                            <td>
+                                                <div class="d-flex align-items-center">
+                                                    <h6 class="m-b-0">Erin Gonzales</h6>
+                                                </div>
+                                            </td>
+                                            <td>08099338843</td>
+                                            <td>No. 2 My House Road, Somewhere</td>
+                                            <td class="text-right">
+                                                <button class="btn btn-icon btn-hover btn-sm btn-rounded pull-right">
+                                                    <i class="anticon anticon-eye"></i>
+                                                </button>
+                                                <button class="btn btn-icon btn-hover btn-sm btn-rounded pull-right">
+                                                    <i class="anticon anticon-edit"></i>
+                                                </button>
+                                                <button class="btn btn-icon btn-hover btn-sm btn-rounded">
+                                                    <i class="anticon anticon-delete"></i>
+                                                </button>
+                                            </td>
+                                        </tr>
+
+                                        <tr>
+                                            <td>
+                                                <div class="checkbox">
+                                                    <input id="check-item-1" type="checkbox">
+                                                    <label for="check-item-1" class="m-b-0"></label>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                #5331
+                                            </td>
+                                            <td>
+                                                <div class="d-flex align-items-center">
+                                                    <h6 class="m-b-0">Monkey D. Luffy</h6>
+                                                </div>
+                                            </td>
+                                            <td>08099338843</td>
+                                            <td>East Blue</td>
+                                            <td class="text-right">
+                                                <button class="btn btn-icon btn-hover btn-sm btn-rounded pull-right">
+                                                    <i class="anticon anticon-eye"></i>
+                                                </button>
+                                                <button class="btn btn-icon btn-hover btn-sm btn-rounded pull-right">
+                                                    <i class="anticon anticon-edit"></i>
+                                                </button>
+                                                <button class="btn btn-icon btn-hover btn-sm btn-rounded">
+                                                    <i class="anticon anticon-delete"></i>
+                                                </button>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
                             </div>
                         </div>
                     </div>
                 </div>
+                <!-- Content Wrapper END -->
+
                 <!-- Footer START -->
                 <footer class="footer">
                     <div class="footer-content">
@@ -563,8 +632,9 @@
     <script src="assets/js/vendors.min.js"></script>
 
     <!-- page js -->
-    <script src="assets/vendors/chartjs/Chart.min.js"></script>
-    <script src="assets/js/pages/dashboard-crm.js"></script>
+    <script src="assets/vendors/datatables/jquery.dataTables.min.js"></script>
+    <script src="assets/vendors/datatables/dataTables.bootstrap.min.js"></script>
+    <script src="assets/js/pages/e-commerce-order-list.js"></script>
 
     <!-- Core JS -->
     <script src="assets/js/app.min.js"></script>
