@@ -7,3 +7,7 @@
 .logo-fold-handle{
 	width: 50%;
 }
+
+.required{
+	color: red;
+}
