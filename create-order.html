@@ -12,6 +12,7 @@
     <!-- page css -->
     <link href="assets/vendors/bootstrap-datepicker/bootstrap-datepicker.min.css" rel="stylesheet">
 
+
     <!-- Core css -->
     <link href="assets/css/app.min.css" rel="stylesheet">
         <link href="assets/css/custom.css" rel="stylesheet">
@@ -230,7 +231,7 @@
                                 </span>
                             </a>
                            <ul class="dropdown-menu">
-                                <li>
+                                <li class="active">
                                     <a href="create-order.html">Create Orders</a>
                                 </li>
                                 <li>
@@ -250,7 +251,7 @@
                                 </span>
                             </a>
                             <ul class="dropdown-menu">
-                                <li class="active">
+                                <li>
                                     <a href="create-product.html">Create Products</a>
                                 </li>
                                 <li>
@@ -325,70 +326,97 @@
                 <div class="main-content">
                     <div class="card">
                         <div class="card-body">
-                            <h4>Product Details</h4>
+                            <h4>Order Details</h4>
                             <div class="m-t-25">
                                 <form>
-                                    <div class="form-row">
-                                        <div class="form-group col-md-6">
-                                            <label for="productName">Product Name <span class="required-feilds">*</span></label>
-                                            <input type="text" class="form-control" id="productName" placeholder="Product Name" required>
+                                    <div class="form-group ">
+                                            <label for="customerName">Customer Name <span class="required-feilds">*</span></label>
+                                            <select class="custom-select" style="min-width: 180px;" id="customerName" class="customerName" required>
+                                                <option selected>Select Customer</option>
+                                                <option value="johndoe">John Doe</option>
+                                                <option value="mkl">Monkey D. Luffy</option>
+                                            </select>
                                         </div>
-                                         <div class="form-group col-md-6">
-                                            <label for="img">Select Product Image <span class="required-feilds">*</span></label>
-                                            <input type="file" class="form-control" id="productImg" name="productImg" accept="image/*">
-                                        </div>
-                                    </div>
-
-                                    <div class="form-row">
-                                        <div class="form-group col-md-6">
-                                           <label for="costPrice">Cost Price <span class="required-feilds">*</span></label>
-                                           <div class="input-group mb-3">
-                                                <div class="input-group-prepend">
-                                                    <span class="input-group-text">&#8358;</span>
-                                                </div>
-                                                <input type="text" class="form-control" id="costPrice" aria-label="Amount (to the nearest dollar)" onkeypress="return /\d/.test(String.fromCharCode(((event||window.event).which||(event||window.event).which)));" required>
-                                                <div class="input-group-append">
-                                                    <span class="input-group-text">.00</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="form-group col-md-6">
-                                           <label for="sellingPrice">Selling Price <span class="required-feilds">*</span></label>
-                                           <div class="input-group mb-3">
-                                                <div class="input-group-prepend">
-                                                    <span class="input-group-text">&#8358;</span>
-                                                </div>
-                                                <input type="text" class="form-control" id="sellingPrice" aria-label="Amount (to the nearest dollar)" onkeypress="return /\d/.test(String.fromCharCode(((event||window.event).which||(event||window.event).which)));" required>
-                                                <div class="input-group-append">
-                                                    <span class="input-group-text">.00</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
                                     <div class="form-row">
                                         <div class="form-group col-md-6">
                                             <label for="category">Category <span class="required-feilds">*</span></label>
-                                            <select class="custom-select" style="min-width: 180px;" required>
+                                            <select class="custom-select" style="min-width: 180px;" id="category" class="category" required>
                                                 <option selected>Select Category</option>
                                                 <option value="homeDeco">Home Decoration</option>
-                                                <option value="eletronic">Eletronic</option>
+                                                <option value="eletronic">Electronic</option>
                                                 <option value="jewellery">Jewellery</option>
                                             </select>
                                         </div>
                                         <div class="form-group col-md-6">
-                                            <label for="availability">Availability <span class="required-feilds">*</span></label>
-                                            <select class="custom-select" style="min-width: 180px;" required>
-                                                <option selected>Select Availability</option>
-                                                <option value="inStock">In Stock</option>
-                                                <option value="outOfStock">Out Of Stock</option>
+                                            <label for="productName">Product <span class="required-feilds">*</span></label>
+                                            <select class="custom-select" style="min-width: 180px;" id="productName" class="productName" required>
+                                                <option selected>Select Product</option>
+                                                <option value="shoe">Shoe</option>
+                                                <option value="bag">Bag</option>
+                                                <option value="dog">Dog</option>
                                             </select>
                                         </div>
                                     </div>
-                                    <div class="form-group ">
-                                        <label for="stockNo">Available Stock <span class="required-feilds">*</span></label>
-                                        <input type="text" class="form-control" id="stockNo" placeholder="Stock Available" onkeypress="return /\d/.test(String.fromCharCode(((event||window.event).which||(event||window.event).which)));" required>
-                                    </div> 
-                                    <button type="submit" class="btn btn-primary float-right">Create Product</button>
+
+                                    <div class="form-row">
+                                        <div class="form-group col-md-4">
+                                           <label for="productQuantity">Quantity <span class="required-feilds">*</span></label>
+                                                <input type="text" class="form-control" id="productQuantity" name="productQuantity" aria-label="Amount (to the nearest Naira)" onkeypress="return /\d/.test(String.fromCharCode(((event||window.event).which||(event||window.event).which)));" required>
+                                        </div>
+                                        <div class="form-group col-md-4">
+                                           <label for="unitCost">Unit Cost </label>
+                                           <div class="input-group mb-3">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text">&#8358;</span>
+                                                </div>
+                                                <input type="text" class="form-control" id="unitCost" name="unitCost" disabled>
+                                                <div class="input-group-append">
+                                                    <span class="input-group-text">.00</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group col-md-4">
+                                           <label for="totalCost">Total Cost </label>
+                                           <div class="input-group mb-3">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text">&#8358;</span>
+                                                </div>
+                                                <input type="text" class="form-control" id="totalCost" name="totalCost" disabled>
+                                                <div class="input-group-append">
+                                                    <span class="input-group-text">.00</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="form-group col-md-6">
+                                            <label>Date of Order <span class="required-feilds">*</span></label>
+                                            <div class="input-affix m-b-10">
+                                                <i class="prefix-icon anticon anticon-calendar"></i>
+                                                <input type="text" class="form-control dateOfOrder" id="dateOfOrder" name="dateOfOrder" placeholder="Pick a date">
+                                            </div>
+                                        </div>
+                                        <div class="form-group col-md-6">
+                                            <label>Due Date of Shipment <span class="required-feilds">*</span></label>
+                                            <div class="input-affix m-b-10">
+                                                <i class="prefix-icon anticon anticon-calendar"></i>
+                                                <input type="text" class="form-control dueDateOfShipment" id="dueDateOfShipment" name="dueDateOfShipment" placeholder="Pick a date">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="form-group col-md-6">
+                                            <label>Billing Address <span class="required-feilds">*</span></label>
+                                            <textarea name="billingAddress" id="billingAddress" class="form-control" placeholder="Billing Address"></textarea>
+                                        </div>
+                                        <div class="form-group col-md-6">
+                                            <label>Shipping Address <span class="required-feilds">*</span></label>
+                                            <textarea name="shippingAddress" id="shippingAddress" class="form-control" placeholder="Shipping Address"></textarea>
+                                        </div>
+                                       
+                                    </div>
+                                    <hr>
+                                    <button type="submit" class="btn btn-primary float-right">Create Order</button>
                                 </form>
                             </div>
                         </div>
@@ -579,11 +607,14 @@
     <script src="assets/js/vendors.min.js"></script>
 
     <!-- page js -->
-    <script src="assets/vendors/chartjs/Chart.min.js"></script>
-    <script src="assets/js/pages/dashboard-crm.js"></script>
+    <script src="assets/vendors/bootstrap-datepicker/bootstrap-datepicker.min.js"></script>
 
     <!-- Core JS -->
     <script src="assets/js/app.min.js"></script>
+    <script>
+       $('.dateOfOrder').datepicker();
+       $('.dueDateOfShipment').datepicker();
+    </script>
 
 </body>
 

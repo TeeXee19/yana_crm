@@ -231,16 +231,9 @@
                             </a>
                             <ul class="dropdown-menu">
                                 <li>
+                                    <a href="create-order.html">Create Order</a>
+                                </li><li>
                                     <a href="order.html">Orders List</a>
-                                </li>
-                                <li>
-                                    <a href="app-e-commerce-products.html">Products</a>
-                                </li>
-                                <li>
-                                    <a href="app-e-commerce-products-list.html">Products List</a>
-                                </li>
-                                <li>
-                                    <a href="app-e-commerce-products-edit.html">Products Edit</a>
                                 </li>
                             </ul>
                         </li>
@@ -257,7 +250,7 @@
                             </a>
                             <ul class="dropdown-menu">
                                 <li>
-                                    <a href="view-products.html">Create Products</a>
+                                    <a href="create-product.html">Create Products</a>
                                 </li>
                                 <li>
                                     <a href="product-list.html">Products List</a>
@@ -786,7 +779,7 @@
                            <!-- Interaction Begins -->
                             <div class="tab-pane fade" id="tab-security">
                                 <div class="table-responsive">
-                                    <table class="table table-hover" id="customerOrder">
+                                    <table class="table table-hover" id="customerInteraction">
                                         <thead>
                                             <tr>
                                                 <th>
@@ -1042,6 +1035,10 @@
     <script src="assets/js/app.min.js"></script>
     <script>
          $('#customerOrder').DataTable({
+            "lengthMenu": [[5, 10, 25, 50, -1], [5, 10, 25, 50, "All"]]
+         });
+
+         $('#customerInteraction').DataTable({
             "lengthMenu": [[5, 10, 25, 50, -1], [5, 10, 25, 50, "All"]]
          });
           $("#checkAll").on('change',function(){
