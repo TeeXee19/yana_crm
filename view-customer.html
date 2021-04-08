@@ -11,6 +11,7 @@
 
     <!-- page css -->
     <link href="assets/vendors/bootstrap-datepicker/bootstrap-datepicker.min.css" rel="stylesheet">
+    <link href="assets/vendors/datatables/dataTables.bootstrap.min.css" rel="stylesheet">
 
     <!-- Core css -->
     <link href="assets/css/app.min.css" rel="stylesheet">
@@ -201,7 +202,7 @@
                                 <span class="icon-holder">
                                     <i class="anticon anticon-user"></i>
                                 </span>
-                                <span>Customers</span>
+                                <span class="title">Customers</span>
                                 <span class="arrow">
                                     <i class="arrow-icon"></i>
                                 </span>
@@ -223,7 +224,7 @@
                                 <span class="icon-holder">
                                     <i class="anticon anticon-shopping-cart"></i>
                                 </span>
-                                <span>Order</span>
+                                <span class="title">Order</span>
                                 <span class="arrow">
                                     <i class="arrow-icon"></i>
                                 </span>
@@ -249,7 +250,7 @@
                                 <span class="icon-holder">
                                     <i class="anticon anticon-appstore"></i>
                                 </span>
-                                <span>Product</span>
+                                <span class="title">Product</span>
                                 <span class="arrow">
                                     <i class="arrow-icon"></i>
                                 </span>
@@ -391,6 +392,457 @@
                             </div>
                         </div>
                     </div>
+
+                      <!-- Content Wrapper START -->
+                    <div class="card">
+                    <div class="card-body">
+                    <div class=" container page-header  has-tab">
+                        <ul class="nav nav-tabs" >
+                            <li class="nav-item">
+                                <a class="nav-link active" data-toggle="tab" href="#tab-order">Order History</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" data-toggle="tab" href="#tab-security">Interactions</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="container">
+                        <div class="tab-content m-t-15">
+                            <div class="tab-pane fade show active" id="tab-order" >
+                            <div class="table-responsive">
+                                <table class="table table-hover" id="customerOrder">
+                                    <thead>
+                                        <tr>
+                                            <th>
+                                                <div class="checkbox">
+                                                    <input id="checkAll" type="checkbox">
+                                                    <label for="checkAll" class="m-b-0"></label>
+                                                </div>
+                                            </th>
+                                            <th>ID</th>
+                                            <th>Customer</th>
+                                            <th>Date</th>
+                                            <th>Amount</th>
+                                            <th>Status</th>
+                                            <th></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <div class="checkbox">
+                                                    <input id="check-item-1" type="checkbox">
+                                                    <label for="check-item-1" class="m-b-0"></label>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                #5331
+                                            </td>
+                                            <td>
+                                                <div class="d-flex align-items-center">
+                                                    <div class="avatar avatar-image avatar-sm m-r-10">
+                                                        <img src="assets/images/avatars/thumb-1.jpg" alt="">
+                                                    </div>
+                                                    <h6 class="m-b-0">Erin Gonzales</h6>
+                                                </div>
+                                            </td>
+                                            <td>8 May 2019</td>
+                                            <td>$137.00</td>
+                                            <td>
+                                                <div class="d-flex align-items-center">
+                                                    <div class="badge badge-success badge-dot m-r-10"></div>
+                                                    <div>Approved</div>
+                                                </div>
+                                            </td>
+                                            <td class="text-right">
+                                                <button class="btn btn-icon btn-hover btn-sm btn-rounded pull-right">
+                                                    <i class="anticon anticon-edit"></i>
+                                                </button>
+                                                <button class="btn btn-icon btn-hover btn-sm btn-rounded">
+                                                    <i class="anticon anticon-delete"></i>
+                                                </button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="checkbox">
+                                                    <input id="check-item-2" type="checkbox">
+                                                    <label for="check-item-2" class="m-b-0"></label>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                #5375
+                                            </td>
+                                            <td>
+                                                <div class="d-flex align-items-center">
+                                                    <div class="avatar avatar-image avatar-sm m-r-10">
+                                                        <img src="assets/images/avatars/thumb-2.jpg" alt="">
+                                                    </div>
+                                                    <h6 class="m-b-0">Darryl Day</h6>
+                                                </div>
+                                            </td>
+                                            <td>6 May 2019</td>
+                                            <td>$322.00</td>
+                                            <td>
+                                                <div class="d-flex align-items-center">
+                                                    <div class="badge badge-success badge-dot m-r-10"></div>
+                                                    <div>Approved</div>
+                                                </div>
+                                            </td>
+                                            <td class="text-right">
+                                                <button class="btn btn-icon btn-hover btn-sm btn-rounded pull-right">
+                                                    <i class="anticon anticon-edit"></i>
+                                                </button>
+                                                <button class="btn btn-icon btn-hover btn-sm btn-rounded">
+                                                    <i class="anticon anticon-delete"></i>
+                                                </button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="checkbox">
+                                                    <input id="check-item-3" type="checkbox">
+                                                    <label for="check-item-3" class="m-b-0"></label>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                #5362
+                                            </td>
+                                            <td>
+                                                <div class="d-flex align-items-center">
+                                                    <div class="avatar avatar-image avatar-sm m-r-10">
+                                                        <img src="assets/images/avatars/thumb-3.jpg" alt="">
+                                                    </div>
+                                                    <h6 class="m-b-0">Marshall Nichols</h6>
+                                                </div>
+                                            </td>
+                                            <td>1 May 2019</td>
+                                            <td>$543.00</td>
+                                            <td>
+                                                <div class="d-flex align-items-center">
+                                                    <div class="badge badge-success badge-dot m-r-10"></div>
+                                                    <div>Approved</div>
+                                                </div>
+                                            </td>
+                                            <td class="text-right">
+                                                <button class="btn btn-icon btn-hover btn-sm btn-rounded pull-right">
+                                                    <i class="anticon anticon-edit"></i>
+                                                </button>
+                                                <button class="btn btn-icon btn-hover btn-sm btn-rounded">
+                                                    <i class="anticon anticon-delete"></i>
+                                                </button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="checkbox">
+                                                    <input id="check-item-4" type="checkbox">
+                                                    <label for="check-item-4" class="m-b-0"></label>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                #5365
+                                            </td>
+                                            <td>
+                                                <div class="d-flex align-items-center">
+                                                    <div class="avatar avatar-image avatar-sm m-r-10">
+                                                        <img src="assets/images/avatars/thumb-4.jpg" alt="">
+                                                    </div>
+                                                    <h6 class="m-b-0">Virgil Gonzales</h6>
+                                                </div>
+                                            </td>
+                                            <td>28 April 2019</td>
+                                            <td>$876.00</td>
+                                            <td>
+                                                <div class="d-flex align-items-center">
+                                                    <div class="badge badge-primary badge-dot m-r-10"></div>
+                                                    <div>Pending</div>
+                                                </div>
+                                            </td>
+                                            <td class="text-right">
+                                                <button class="btn btn-icon btn-hover btn-sm btn-rounded pull-right">
+                                                    <i class="anticon anticon-edit"></i>
+                                                </button>
+                                                <button class="btn btn-icon btn-hover btn-sm btn-rounded">
+                                                    <i class="anticon anticon-delete"></i>
+                                                </button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="checkbox">
+                                                    <input id="check-item-5" type="checkbox">
+                                                    <label for="check-item-5" class="m-b-0"></label>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                #5213
+                                            </td>
+                                            <td>
+                                                <div class="d-flex align-items-center">
+                                                    <div class="avatar avatar-image avatar-sm m-r-10">
+                                                        <img src="assets/images/avatars/thumb-5.jpg" alt="">
+                                                    </div>
+                                                    <h6 class="m-b-0">Nicole Wyne</h6>
+                                                </div>
+                                            </td>
+                                            <td>28 April 2019</td>
+                                            <td>$241.00</td>
+                                            <td>
+                                                <div class="d-flex align-items-center">
+                                                    <div class="badge badge-success badge-dot m-r-10"></div>
+                                                    <div>Approved</div>
+                                                </div>
+                                            </td>
+                                            <td class="text-right">
+                                                <button class="btn btn-icon btn-hover btn-sm btn-rounded pull-right">
+                                                    <i class="anticon anticon-edit"></i>
+                                                </button>
+                                                <button class="btn btn-icon btn-hover btn-sm btn-rounded">
+                                                    <i class="anticon anticon-delete"></i>
+                                                </button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="checkbox">
+                                                    <input id="check-item-6" type="checkbox">
+                                                    <label for="check-item-6" class="m-b-0"></label>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                #5311
+                                            </td>
+                                            <td>
+                                                <div class="d-flex align-items-center">
+                                                    <div class="avatar avatar-image avatar-sm m-r-10">
+                                                        <img src="assets/images/avatars/thumb-6.jpg" alt="">
+                                                    </div>
+                                                    <h6 class="m-b-0">Riley Newman</h6>
+                                                </div>
+                                            </td>
+                                            <td>19 April 2019</td>
+                                            <td>$872.00</td>
+                                            <td>
+                                                <div class="d-flex align-items-center">
+                                                    <div class="badge badge-danger badge-dot m-r-10"></div>
+                                                    <div>Rejected</div>
+                                                </div>
+                                            </td>
+                                            <td class="text-right">
+                                                <button class="btn btn-icon btn-hover btn-sm btn-rounded pull-right">
+                                                    <i class="anticon anticon-edit"></i>
+                                                </button>
+                                                <button class="btn btn-icon btn-hover btn-sm btn-rounded">
+                                                    <i class="anticon anticon-delete"></i>
+                                                </button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="checkbox">
+                                                    <input id="check-item-7" type="checkbox">
+                                                    <label for="check-item-7" class="m-b-0"></label>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                #5387
+                                            </td>
+                                            <td>
+                                                <div class="d-flex align-items-center">
+                                                    <div class="avatar avatar-image avatar-sm m-r-10">
+                                                        <img src="assets/images/avatars/thumb-7.jpg" alt="">
+                                                    </div>
+                                                    <h6 class="m-b-0">Pamela Wanda</h6>
+                                                </div>
+                                            </td>
+                                            <td>18 April 2019</td>
+                                            <td>$728.00</td>
+                                            <td>
+                                                <div class="d-flex align-items-center">
+                                                    <div class="badge badge-success badge-dot m-r-10"></div>
+                                                    <div>Approved</div>
+                                                </div>
+                                            </td>
+                                            <td class="text-right">
+                                                <button class="btn btn-icon btn-hover btn-sm btn-rounded pull-right">
+                                                    <i class="anticon anticon-edit"></i>
+                                                </button>
+                                                <button class="btn btn-icon btn-hover btn-sm btn-rounded">
+                                                    <i class="anticon anticon-delete"></i>
+                                                </button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="checkbox">
+                                                    <input id="check-item-8" type="checkbox">
+                                                    <label for="check-item-8" class="m-b-0"></label>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                #5390
+                                            </td>
+                                            <td>
+                                                <div class="d-flex align-items-center">
+                                                    <div class="avatar avatar-image avatar-sm m-r-10">
+                                                        <img src="assets/images/avatars/thumb-8.jpg" alt="">
+                                                    </div>
+                                                    <h6 class="m-b-0">Emily Shaw</h6>
+                                                </div>
+                                            </td>
+                                            <td>16 April 2019</td>
+                                            <td>$802.00</td>
+                                            <td>
+                                                <div class="d-flex align-items-center">
+                                                    <div class="badge badge-primary badge-dot m-r-10"></div>
+                                                    <div>Pending</div>
+                                                </div>
+                                            </td>
+                                            <td class="text-right">
+                                                <button class="btn btn-icon btn-hover btn-sm btn-rounded pull-right">
+                                                    <i class="anticon anticon-edit"></i>
+                                                </button>
+                                                <button class="btn btn-icon btn-hover btn-sm btn-rounded">
+                                                    <i class="anticon anticon-delete"></i>
+                                                </button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="checkbox">
+                                                    <input id="check-item-9" type="checkbox">
+                                                    <label for="check-item-9" class="m-b-0"></label>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                #5317
+                                            </td>
+                                            <td>
+                                                <div class="d-flex align-items-center">
+                                                    <div class="avatar avatar-image avatar-sm m-r-10">
+                                                        <img src="assets/images/avatars/thumb-9.jpg" alt="">
+                                                    </div>
+                                                    <h6 class="m-b-0">Victor Terry</h6>
+                                                </div>
+                                            </td>
+                                            <td>12 April 2019</td>
+                                            <td>$569.00</td>
+                                            <td>
+                                                <div class="d-flex align-items-center">
+                                                    <div class="badge badge-success badge-dot m-r-10"></div>
+                                                    <div>Approved</div>
+                                                </div>
+                                            </td>
+                                            <td class="text-right">
+                                                <button class="btn btn-icon btn-hover btn-sm btn-rounded pull-right">
+                                                    <i class="anticon anticon-edit"></i>
+                                                </button>
+                                                <button class="btn btn-icon btn-hover btn-sm btn-rounded">
+                                                    <i class="anticon anticon-delete"></i>
+                                                </button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="checkbox">
+                                                    <input id="check-item-10" type="checkbox">
+                                                    <label for="check-item-10" class="m-b-0"></label>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                #5291
+                                            </td>
+                                            <td>
+                                                <div class="d-flex align-items-center">
+                                                    <div class="avatar avatar-image avatar-sm m-r-10">
+                                                        <img src="assets/images/avatars/thumb-10.jpg" alt="">
+                                                    </div>
+                                                    <h6 class="m-b-0">Wyatt Wallace</h6>
+                                                </div>
+                                            </td>
+                                            <td>10 April 2019</td>
+                                            <td>$132.00</td>
+                                            <td>
+                                                <div class="d-flex align-items-center">
+                                                    <div class="badge badge-success badge-dot m-r-10"></div>
+                                                    <div>Approved</div>
+                                                </div>
+                                            </td>
+                                            <td class="text-right">
+                                                <button class="btn btn-icon btn-hover btn-sm btn-rounded pull-right">
+                                                    <i class="anticon anticon-edit"></i>
+                                                </button>
+                                                <button class="btn btn-icon btn-hover btn-sm btn-rounded">
+                                                    <i class="anticon anticon-delete"></i>
+                                                </button>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            </div>
+                            
+                           <!-- Interaction Begins -->
+                            <div class="tab-pane fade" id="tab-security">
+                                <div class="table-responsive">
+                                    <table class="table table-hover" id="customerOrder">
+                                        <thead>
+                                            <tr>
+                                                <th>
+                                                    <div class="checkbox">
+                                                        <input id="checkAll" type="checkbox">
+                                                        <label for="checkAll" class="m-b-0"></label>
+                                                    </div>
+                                                </th>
+                                                <th>ID</th>
+                                                <th>Subject</th>
+                                                <th>Description</th>
+                                                <th>Category</th>
+                                                <th>Status</th>
+                                                <th>Action</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>
+                                                    <div class="checkbox">
+                                                        <input id="in_act-1" type="checkbox">
+                                                        <label for="in_act-1" class="m-b-0"></label>
+                                                    </div>
+                                                </td>
+                                                <td>#121</td>
+                                                <td>Why NA</td>
+                                                <td>No be wetin i order</td>
+                                                <td>Complaint</td>
+                                                <td>
+                                                    <div class="d-flex align-items-center">
+                                                    <div class="badge badge-primary badge-dot m-r-10"></div>
+                                                    <div>Pending</div>
+                                                </div>
+                                                </td>
+                                                <td class="text-right">
+                                                    <button class="btn btn-icon btn-hover btn-sm btn-rounded pull-right">
+                                                        <i class="anticon anticon-edit"></i>
+                                                    </button>
+                                                    <button class="btn btn-icon btn-hover btn-sm btn-rounded">
+                                                        <i class="anticon anticon-delete"></i>
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+                        </div>
+                    </div>
+                    
+                <!-- Content Wrapper END -->
                 </div>
                 <!-- Footer START -->
                 <footer class="footer">
@@ -580,8 +1032,22 @@
     <script src="assets/vendors/chartjs/Chart.min.js"></script>
     <script src="assets/js/pages/dashboard-crm.js"></script>
 
+      <!-- page js -->
+    <script src="assets/vendors/datatables/jquery.dataTables.min.js"></script>
+    <script src="assets/vendors/datatables/dataTables.bootstrap.min.js"></script>
+    <!-- <script src="assets/js/pages/datatables.js"></script> -->
+
+
     <!-- Core JS -->
     <script src="assets/js/app.min.js"></script>
+    <script>
+         $('#customerOrder').DataTable({
+            "lengthMenu": [[5, 10, 25, 50, -1], [5, 10, 25, 50, "All"]]
+         });
+          $("#checkAll").on('change',function(){
+            $('#customerOrder input[type="checkbox"]').prop('checked',$(this).is(":checked"));
+        }); 
+    </script>
 
 </body>
 
