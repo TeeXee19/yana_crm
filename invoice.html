@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Enlink - Admin Dashboard Template</title>
+    <title>Yana CRM</title>
 
     <!-- Favicon -->
     <link rel="shortcut icon" href="assets/images/logo/favicon.png">
@@ -13,6 +13,7 @@
 
     <!-- Core css -->
     <link href="assets/css/app.min.css" rel="stylesheet">
+    <link href="assets/css/custom.css" rel="stylesheet">
 
 </head>
 
@@ -23,8 +24,8 @@
             <div class="header">
                 <div class="logo logo-dark">
                     <a href="index.html">
-                        <img src="assets/images/logo/logo.png" alt="Logo">
-                        <img class="logo-fold" src="assets/images/logo/logo-fold.png" alt="Logo">
+                        <img src="assets/images/logo/logo.png" class="logo-handle" alt="Logo">
+                        <img class="logo-fold logo-fold-handle" src="assets/images/logo/logo-fold.png" alt="Logo">
                     </a>
                 </div>
                 <div class="logo logo-white">
@@ -234,6 +235,9 @@
                                 <li>
                                     <a href="order.html">Orders List</a>
                                 </li>
+                                  <li >
+                                    <a href="cancelled-orders.html">Cancelled Orders</a>
+                                </li>
                             </ul>
                         </li>
 
@@ -259,57 +263,13 @@
                                 </li>
                             </ul>
                         </li>
-
-                      
-                        <li class="nav-item dropdown">
-                            <a class="dropdown-toggle" href="javascript:void(0);">
+                        <li class="nav-item ">
+                            <a  href="interactions.html">
                                 <span class="icon-holder">
-                                    <i class="anticon anticon-form"></i>
+                                    <i class="anticon anticon-reconciliation"></i>
                                 </span>
-                                <span class="title">Forms</span>
-                                <span class="arrow">
-                                    <i class="arrow-icon"></i>
-                                </span>
+                                <span class="title" >Interactions</span>
                             </a>
-                            <ul class="dropdown-menu">
-                                <li>
-                                    <a href="form-elements.html">Form Elements</a>
-                                </li>
-                                <li>
-                                    <a href="form-layouts.html">Form Layouts</a>
-                                </li>
-                                <li>
-                                    <a href="form-validation.html">Form Validation</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="dropdown-toggle" href="javascript:void(0);">
-                                <span class="icon-holder">
-                                    <i class="anticon anticon-file"></i>
-                                </span>
-                                <span class="title">Pages</span>
-                                <span class="arrow">
-                                    <i class="arrow-icon"></i>
-                                </span>
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li>
-                                    <a href="profile.html">Profile</a>
-                                </li>
-                                <li>
-                                    <a href="invoice.html">Invoice</a>
-                                </li>
-                                <li>
-                                    <a href="members.html">Members</a>
-                                </li>
-                                <li>
-                                    <a href="pricing.html">Pricing</a>
-                                </li>
-                                <li>
-                                    <a href="setting.html">Setting</a>
-                                </li>
-                            </ul>
                         </li>
                     </ul>
                 </div>
@@ -356,9 +316,9 @@
                                         <div class="col-sm-9">
                                             <h3 class="p-l-10 m-t-10">Invoice To:</h3>
                                             <address class="p-l-10 m-t-10">
-                                                <span class="font-weight-semibold text-dark">Genting Holdings.</span><br>
-                                                <span>8626 Maiden Dr. </span><br>
-                                                <span>Niagara Falls, New York 14304</span>
+                                                <span class="font-weight-semibold text-dark">Monkey D. Luffy</span><br>
+                                                <span>Gol D Rodgers, Grave </span><br>
+                                                <span>East Blue, Lougetown</span>
                                             </address>
                                         </div>
                                         <div class="col-sm-3">
@@ -390,22 +350,22 @@
                                                         <th>1</th>
                                                         <td>Asus Zenfone 3 Zoom ZE553KL Dual Sim (4GB, 64GB)</td>
                                                         <td>2</td>
-                                                        <td>$450.00</td>
-                                                        <td>$900.00</td>
+                                                        <td>&#8358;450.00</td>
+                                                        <td>&#8358;900.00</td>
                                                     </tr>
                                                     <tr>
                                                         <th>2</th>
                                                         <td>HP Pavilion 15-au103TX 15.6˝ Laptop Red</td>
                                                         <td>1</td>
-                                                        <td>$550.00</td>
-                                                        <td>$550.00</td>
+                                                        <td>&#8358;550.00</td>
+                                                        <td>&#8358;550.00</td>
                                                     </tr>
                                                     <tr>
                                                         <th>3</th>
                                                         <td>Canon EOS 77D</td>
                                                         <td>1</td>
-                                                        <td>$875.00</td>
-                                                        <td>$875.00</td>
+                                                        <td>&#8358;875.00</td>
+                                                        <td>&#8358;875.00</td>
                                                     </tr>
                                                 </tbody>
                                             </table>
@@ -413,10 +373,9 @@
                                         <div class="row m-t-30 lh-1-8">
                                             <div class="col-sm-12">
                                                 <div class="float-right text-right">
-                                                    <p>Sub - Total amount: $2,325</p>
-                                                    <p>vat (10%) : $232 </p>
+                                                    <p>Sub - Total amount: &#8358;2,325</p>
                                                     <hr>
-                                                    <h3><span class="font-weight-semibold text-dark">Total :</span> $2,557.00</h3>
+                                                    <h3><span class="font-weight-semibold text-dark">Total :</span> &#8358;2,557.00</h3>
                                                 </div>
                                             </div>
                                         </div>
@@ -434,7 +393,7 @@
                                             <div class="col-sm-6 text-right">
                                                 <small><span class="font-weight-semibold text-dark">Phone:</span> (123) 456-7890</small>
                                                 <br>
-                                                <small>support@themenate.com</small>
+                                                <small>support@yana.com</small>
                                             </div>
                                         </div>
                                     </div>

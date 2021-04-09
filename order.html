@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Enlink - Admin Dashboard Template</title>
+    <title>Yana CRM</title>
 
     <!-- Favicon -->
     <link rel="shortcut icon" href="assets/images/logo/favicon.png">
@@ -235,6 +235,9 @@
                                 <li class="active">
                                     <a href="order.html">Orders List</a>
                                 </li>
+                                  <li >
+                                    <a href="cancelled-orders.html">Cancelled Orders</a>
+                                </li>
                             </ul>
                         </li>
 
@@ -260,57 +263,13 @@
                                 </li>
                             </ul>
                         </li>
-
-                      
-                        <li class="nav-item dropdown">
-                            <a class="dropdown-toggle" href="javascript:void(0);">
+                        <li class="nav-item">
+                            <a href="interactions.html">
                                 <span class="icon-holder">
-                                    <i class="anticon anticon-form"></i>
+                                    <i class="anticon anticon-reconciliation"></i>
                                 </span>
-                                <span class="title">Forms</span>
-                                <span class="arrow">
-                                    <i class="arrow-icon"></i>
-                                </span>
+                                <span class="title" >Interactions</span>
                             </a>
-                            <ul class="dropdown-menu">
-                                <li>
-                                    <a href="form-elements.html">Form Elements</a>
-                                </li>
-                                <li>
-                                    <a href="form-layouts.html">Form Layouts</a>
-                                </li>
-                                <li>
-                                    <a href="form-validation.html">Form Validation</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="dropdown-toggle" href="javascript:void(0);">
-                                <span class="icon-holder">
-                                    <i class="anticon anticon-file"></i>
-                                </span>
-                                <span class="title">Pages</span>
-                                <span class="arrow">
-                                    <i class="arrow-icon"></i>
-                                </span>
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li>
-                                    <a href="profile.html">Profile</a>
-                                </li>
-                                <li>
-                                    <a href="invoice.html">Invoice</a>
-                                </li>
-                                <li>
-                                    <a href="members.html">Members</a>
-                                </li>
-                                <li>
-                                    <a href="pricing.html">Pricing</a>
-                                </li>
-                                <li>
-                                    <a href="setting.html">Setting</a>
-                                </li>
-                            </ul>
                         </li>
                     </ul>
                 </div>
@@ -344,6 +303,7 @@
                                                 <option value="all">All</option>
                                                 <option value="approved">Approved</option>
                                                 <option value="pending">Pending</option>
+                                                <option value="completed">Completed</option>
                                                 <option value="rejected">Rejected</option>
                                             </select>
                                         </div>
@@ -371,7 +331,7 @@
                                             <th>Date</th>
                                             <th>Amount</th>
                                             <th>Status</th>
-                                            <th></th>
+                                            <th>Action</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -387,14 +347,11 @@
                                             </td>
                                             <td>
                                                 <div class="d-flex align-items-center">
-                                                    <div class="avatar avatar-image avatar-sm m-r-10">
-                                                        <img src="assets/images/avatars/thumb-1.jpg" alt="">
-                                                    </div>
                                                     <h6 class="m-b-0">Erin Gonzales</h6>
                                                 </div>
                                             </td>
                                             <td>8 May 2019</td>
-                                            <td>$137.00</td>
+                                            <td>&#8358;137.00</td>
                                             <td>
                                                 <div class="d-flex align-items-center">
                                                     <div class="badge badge-success badge-dot m-r-10"></div>
@@ -402,12 +359,31 @@
                                                 </div>
                                             </td>
                                             <td class="text-right">
-                                                <button class="btn btn-icon btn-hover btn-sm btn-rounded pull-right">
-                                                    <i class="anticon anticon-edit"></i>
-                                                </button>
-                                                <button class="btn btn-icon btn-hover btn-sm btn-rounded">
-                                                    <i class="anticon anticon-delete"></i>
-                                                </button>
+                                                <div class="dropdown">
+                                                    <button class="btn btn-primary dropdown-toggle"  data-toggle="dropdown">
+                                                        <span>Action</span>
+                                                    </button>
+                                                    <div class="dropdown-menu">
+                                                        <a class="dropdown-item" href="./invoice.html">
+                                                            <button class="btn btn-icon btn-hover btn-sm btn-rounded pull-right">
+                                                                <i class="anticon anticon-eye"></i> 
+                                                            </button>
+                                                            View Invoice
+                                                        </a>
+                                                         <a class="dropdown-item" href="#" data-toggle="modal" data-target="#exampleModal">
+                                                             <button class="btn btn-icon btn-hover btn-sm btn-rounded pull-right">
+                                                                <i class="anticon anticon-edit"></i> 
+                                                            </button>
+                                                            Change Status
+                                                        </a>
+                                                         <a class="dropdown-item" href="./cancelled-orders.html">
+                                                             <button class="btn btn-icon btn-hover btn-sm btn-rounded pull-right">
+                                                                <i class="anticon anticon-close"></i> 
+                                                            </button>
+                                                            Cancel Order
+                                                        </a>
+                                                    </div>
+                                                </div>
                                             </td>
                                         </tr>
                                         <tr>
@@ -422,14 +398,11 @@
                                             </td>
                                             <td>
                                                 <div class="d-flex align-items-center">
-                                                    <div class="avatar avatar-image avatar-sm m-r-10">
-                                                        <img src="assets/images/avatars/thumb-2.jpg" alt="">
-                                                    </div>
                                                     <h6 class="m-b-0">Darryl Day</h6>
                                                 </div>
                                             </td>
                                             <td>6 May 2019</td>
-                                            <td>$322.00</td>
+                                            <td>&#8358;322.00</td>
                                             <td>
                                                 <div class="d-flex align-items-center">
                                                     <div class="badge badge-success badge-dot m-r-10"></div>
@@ -437,12 +410,31 @@
                                                 </div>
                                             </td>
                                             <td class="text-right">
-                                                <button class="btn btn-icon btn-hover btn-sm btn-rounded pull-right">
-                                                    <i class="anticon anticon-edit"></i>
-                                                </button>
-                                                <button class="btn btn-icon btn-hover btn-sm btn-rounded">
-                                                    <i class="anticon anticon-delete"></i>
-                                                </button>
+                                                <div class="dropdown">
+                                                    <button class="btn btn-primary dropdown-toggle"  data-toggle="dropdown">
+                                                        <span>Action</span>
+                                                    </button>
+                                                    <div class="dropdown-menu">
+                                                        <a class="dropdown-item" href="./invoice.html">
+                                                            <button class="btn btn-icon btn-hover btn-sm btn-rounded pull-right">
+                                                                <i class="anticon anticon-eye"></i> 
+                                                            </button>
+                                                            View Invoice
+                                                        </a>
+                                                        <a class="dropdown-item" href="#" data-toggle="modal" data-target="#exampleModal">
+                                                             <button class="btn btn-icon btn-hover btn-sm btn-rounded pull-right">
+                                                                <i class="anticon anticon-edit"></i> 
+                                                            </button>
+                                                            Change Status
+                                                        </a>
+                                                        <a class="dropdown-item" href="#">
+                                                             <button class="btn btn-icon btn-hover btn-sm btn-rounded pull-right">
+                                                                <i class="anticon anticon-close"></i> 
+                                                            </button>
+                                                            Cancel Order
+                                                        </a>
+                                                    </div>
+                                                </div>
                                             </td>
                                         </tr>
                                         <tr>
@@ -457,14 +449,11 @@
                                             </td>
                                             <td>
                                                 <div class="d-flex align-items-center">
-                                                    <div class="avatar avatar-image avatar-sm m-r-10">
-                                                        <img src="assets/images/avatars/thumb-3.jpg" alt="">
-                                                    </div>
                                                     <h6 class="m-b-0">Marshall Nichols</h6>
                                                 </div>
                                             </td>
                                             <td>1 May 2019</td>
-                                            <td>$543.00</td>
+                                            <td>&#8358;543.00</td>
                                             <td>
                                                 <div class="d-flex align-items-center">
                                                     <div class="badge badge-success badge-dot m-r-10"></div>
@@ -472,12 +461,31 @@
                                                 </div>
                                             </td>
                                             <td class="text-right">
-                                                <button class="btn btn-icon btn-hover btn-sm btn-rounded pull-right">
-                                                    <i class="anticon anticon-edit"></i>
-                                                </button>
-                                                <button class="btn btn-icon btn-hover btn-sm btn-rounded">
-                                                    <i class="anticon anticon-delete"></i>
-                                                </button>
+                                                <div class="dropdown">
+                                                    <button class="btn btn-primary dropdown-toggle"  data-toggle="dropdown">
+                                                        <span>Action</span>
+                                                    </button>
+                                                    <div class="dropdown-menu">
+                                                        <a class="dropdown-item" href="./invoice.html">
+                                                            <button class="btn btn-icon btn-hover btn-sm btn-rounded pull-right">
+                                                                <i class="anticon anticon-eye"></i> 
+                                                            </button>
+                                                            View Invoice
+                                                        </a>
+                                                         <a class="dropdown-item" href="#" data-toggle="modal" data-target="#exampleModal">
+                                                             <button class="btn btn-icon btn-hover btn-sm btn-rounded pull-right">
+                                                                <i class="anticon anticon-edit"></i> 
+                                                            </button>
+                                                            Change Status
+                                                        </a>
+                                                         <a class="dropdown-item" href="#">
+                                                             <button class="btn btn-icon btn-hover btn-sm btn-rounded pull-right">
+                                                                <i class="anticon anticon-close"></i> 
+                                                            </button>
+                                                            Cancel Order
+                                                        </a>
+                                                    </div>
+                                                </div>
                                             </td>
                                         </tr>
                                         <tr>
@@ -492,14 +500,11 @@
                                             </td>
                                             <td>
                                                 <div class="d-flex align-items-center">
-                                                    <div class="avatar avatar-image avatar-sm m-r-10">
-                                                        <img src="assets/images/avatars/thumb-4.jpg" alt="">
-                                                    </div>
                                                     <h6 class="m-b-0">Virgil Gonzales</h6>
                                                 </div>
                                             </td>
                                             <td>28 April 2019</td>
-                                            <td>$876.00</td>
+                                            <td>&#8358;876.00</td>
                                             <td>
                                                 <div class="d-flex align-items-center">
                                                     <div class="badge badge-primary badge-dot m-r-10"></div>
@@ -507,12 +512,31 @@
                                                 </div>
                                             </td>
                                             <td class="text-right">
-                                                <button class="btn btn-icon btn-hover btn-sm btn-rounded pull-right">
-                                                    <i class="anticon anticon-edit"></i>
-                                                </button>
-                                                <button class="btn btn-icon btn-hover btn-sm btn-rounded">
-                                                    <i class="anticon anticon-delete"></i>
-                                                </button>
+                                                <div class="dropdown">
+                                                    <button class="btn btn-primary dropdown-toggle"  data-toggle="dropdown">
+                                                        <span>Action</span>
+                                                    </button>
+                                                    <div class="dropdown-menu">
+                                                        <a class="dropdown-item" href="./invoice.html">
+                                                            <button class="btn btn-icon btn-hover btn-sm btn-rounded pull-right">
+                                                                <i class="anticon anticon-eye"></i> 
+                                                            </button>
+                                                            View Invoice
+                                                        </a>
+                                                         <a class="dropdown-item" href="#" data-toggle="modal" data-target="#exampleModal">
+                                                             <button class="btn btn-icon btn-hover btn-sm btn-rounded pull-right">
+                                                                <i class="anticon anticon-edit"></i> 
+                                                            </button>
+                                                            Change Status
+                                                        </a>
+                                                         <a class="dropdown-item" href="#">
+                                                             <button class="btn btn-icon btn-hover btn-sm btn-rounded pull-right">
+                                                                <i class="anticon anticon-close"></i> 
+                                                            </button>
+                                                            Cancel Order
+                                                        </a>
+                                                    </div>
+                                                </div>
                                             </td>
                                         </tr>
                                         <tr>
@@ -527,14 +551,11 @@
                                             </td>
                                             <td>
                                                 <div class="d-flex align-items-center">
-                                                    <div class="avatar avatar-image avatar-sm m-r-10">
-                                                        <img src="assets/images/avatars/thumb-5.jpg" alt="">
-                                                    </div>
                                                     <h6 class="m-b-0">Nicole Wyne</h6>
                                                 </div>
                                             </td>
                                             <td>28 April 2019</td>
-                                            <td>$241.00</td>
+                                            <td>&#8358;241.00</td>
                                             <td>
                                                 <div class="d-flex align-items-center">
                                                     <div class="badge badge-success badge-dot m-r-10"></div>
@@ -542,12 +563,31 @@
                                                 </div>
                                             </td>
                                             <td class="text-right">
-                                                <button class="btn btn-icon btn-hover btn-sm btn-rounded pull-right">
-                                                    <i class="anticon anticon-edit"></i>
-                                                </button>
-                                                <button class="btn btn-icon btn-hover btn-sm btn-rounded">
-                                                    <i class="anticon anticon-delete"></i>
-                                                </button>
+                                                <div class="dropdown">
+                                                    <button class="btn btn-primary dropdown-toggle"  data-toggle="dropdown">
+                                                        <span>Action</span>
+                                                    </button>
+                                                    <div class="dropdown-menu">
+                                                        <a class="dropdown-item" href="./invoice.html">
+                                                            <button class="btn btn-icon btn-hover btn-sm btn-rounded pull-right">
+                                                                <i class="anticon anticon-eye"></i> 
+                                                            </button>
+                                                            View Invoice
+                                                        </a>
+                                                         <a class="dropdown-item" href="#" data-toggle="modal" data-target="#exampleModal">
+                                                             <button class="btn btn-icon btn-hover btn-sm btn-rounded pull-right">
+                                                                <i class="anticon anticon-edit"></i> 
+                                                            </button>
+                                                            Change Status
+                                                        </a>
+                                                         <a class="dropdown-item" href="#">
+                                                             <button class="btn btn-icon btn-hover btn-sm btn-rounded pull-right">
+                                                                <i class="anticon anticon-close"></i> 
+                                                            </button>
+                                                            Cancel Order
+                                                        </a>
+                                                    </div>
+                                                </div>
                                             </td>
                                         </tr>
                                         <tr>
@@ -562,14 +602,11 @@
                                             </td>
                                             <td>
                                                 <div class="d-flex align-items-center">
-                                                    <div class="avatar avatar-image avatar-sm m-r-10">
-                                                        <img src="assets/images/avatars/thumb-6.jpg" alt="">
-                                                    </div>
                                                     <h6 class="m-b-0">Riley Newman</h6>
                                                 </div>
                                             </td>
                                             <td>19 April 2019</td>
-                                            <td>$872.00</td>
+                                            <td>&#8358;872.00</td>
                                             <td>
                                                 <div class="d-flex align-items-center">
                                                     <div class="badge badge-danger badge-dot m-r-10"></div>
@@ -577,12 +614,31 @@
                                                 </div>
                                             </td>
                                             <td class="text-right">
-                                                <button class="btn btn-icon btn-hover btn-sm btn-rounded pull-right">
-                                                    <i class="anticon anticon-edit"></i>
-                                                </button>
-                                                <button class="btn btn-icon btn-hover btn-sm btn-rounded">
-                                                    <i class="anticon anticon-delete"></i>
-                                                </button>
+                                                <div class="dropdown">
+                                                    <button class="btn btn-primary dropdown-toggle"  data-toggle="dropdown">
+                                                        <span>Action</span>
+                                                    </button>
+                                                    <div class="dropdown-menu">
+                                                        <a class="dropdown-item" href="./invoice.html">
+                                                            <button class="btn btn-icon btn-hover btn-sm btn-rounded pull-right">
+                                                                <i class="anticon anticon-eye"></i> 
+                                                            </button>
+                                                            View Invoice
+                                                        </a>
+                                                         <a class="dropdown-item" href="#" data-toggle="modal" data-target="#exampleModal">
+                                                             <button class="btn btn-icon btn-hover btn-sm btn-rounded pull-right">
+                                                                <i class="anticon anticon-edit"></i> 
+                                                            </button>
+                                                            Change Status
+                                                        </a>
+                                                         <a class="dropdown-item" href="#">
+                                                             <button class="btn btn-icon btn-hover btn-sm btn-rounded pull-right">
+                                                                <i class="anticon anticon-close"></i> 
+                                                            </button>
+                                                            Cancel Order
+                                                        </a>
+                                                    </div>
+                                                </div>
                                             </td>
                                         </tr>
                                         <tr>
@@ -597,27 +653,43 @@
                                             </td>
                                             <td>
                                                 <div class="d-flex align-items-center">
-                                                    <div class="avatar avatar-image avatar-sm m-r-10">
-                                                        <img src="assets/images/avatars/thumb-7.jpg" alt="">
-                                                    </div>
                                                     <h6 class="m-b-0">Pamela Wanda</h6>
                                                 </div>
                                             </td>
                                             <td>18 April 2019</td>
-                                            <td>$728.00</td>
+                                            <td>&#8358;728.00</td>
                                             <td>
                                                 <div class="d-flex align-items-center">
                                                     <div class="badge badge-success badge-dot m-r-10"></div>
                                                     <div>Approved</div>
                                                 </div>
                                             </td>
-                                            <td class="text-right">
-                                                <button class="btn btn-icon btn-hover btn-sm btn-rounded pull-right">
-                                                    <i class="anticon anticon-edit"></i>
-                                                </button>
-                                                <button class="btn btn-icon btn-hover btn-sm btn-rounded">
-                                                    <i class="anticon anticon-delete"></i>
-                                                </button>
+                                           <td class="text-right">
+                                                <div class="dropdown">
+                                                    <button class="btn btn-primary dropdown-toggle"  data-toggle="dropdown">
+                                                        <span>Action</span>
+                                                    </button>
+                                                    <div class="dropdown-menu">
+                                                        <a class="dropdown-item" href="./invoice.html">
+                                                            <button class="btn btn-icon btn-hover btn-sm btn-rounded pull-right">
+                                                                <i class="anticon anticon-eye"></i> 
+                                                            </button>
+                                                            View Invoice
+                                                        </a>
+                                                         <a class="dropdown-item" href="#" data-toggle="modal" data-target="#exampleModal">
+                                                             <button class="btn btn-icon btn-hover btn-sm btn-rounded pull-right">
+                                                                <i class="anticon anticon-edit"></i> 
+                                                            </button>
+                                                            Change Status
+                                                        </a>
+                                                         <a class="dropdown-item" href="#">
+                                                             <button class="btn btn-icon btn-hover btn-sm btn-rounded pull-right">
+                                                                <i class="anticon anticon-close"></i> 
+                                                            </button>
+                                                            Cancel Order
+                                                        </a>
+                                                    </div>
+                                                </div>
                                             </td>
                                         </tr>
                                         <tr>
@@ -632,14 +704,11 @@
                                             </td>
                                             <td>
                                                 <div class="d-flex align-items-center">
-                                                    <div class="avatar avatar-image avatar-sm m-r-10">
-                                                        <img src="assets/images/avatars/thumb-8.jpg" alt="">
-                                                    </div>
                                                     <h6 class="m-b-0">Emily Shaw</h6>
                                                 </div>
                                             </td>
                                             <td>16 April 2019</td>
-                                            <td>$802.00</td>
+                                            <td>&#8358;802.00</td>
                                             <td>
                                                 <div class="d-flex align-items-center">
                                                     <div class="badge badge-primary badge-dot m-r-10"></div>
@@ -647,12 +716,31 @@
                                                 </div>
                                             </td>
                                             <td class="text-right">
-                                                <button class="btn btn-icon btn-hover btn-sm btn-rounded pull-right">
-                                                    <i class="anticon anticon-edit"></i>
-                                                </button>
-                                                <button class="btn btn-icon btn-hover btn-sm btn-rounded">
-                                                    <i class="anticon anticon-delete"></i>
-                                                </button>
+                                                <div class="dropdown">
+                                                    <button class="btn btn-primary dropdown-toggle"  data-toggle="dropdown">
+                                                        <span>Action</span>
+                                                    </button>
+                                                    <div class="dropdown-menu">
+                                                        <a class="dropdown-item" href="./invoice.html">
+                                                            <button class="btn btn-icon btn-hover btn-sm btn-rounded pull-right">
+                                                                <i class="anticon anticon-eye"></i> 
+                                                            </button>
+                                                            View Invoice
+                                                        </a>
+                                                         <a class="dropdown-item" href="#" data-toggle="modal" data-target="#exampleModal">
+                                                             <button class="btn btn-icon btn-hover btn-sm btn-rounded pull-right">
+                                                                <i class="anticon anticon-edit"></i> 
+                                                            </button>
+                                                            Change Status
+                                                        </a>
+                                                         <a class="dropdown-item" href="#">
+                                                             <button class="btn btn-icon btn-hover btn-sm btn-rounded pull-right">
+                                                                <i class="anticon anticon-close"></i> 
+                                                            </button>
+                                                            Cancel Order
+                                                        </a>
+                                                    </div>
+                                                </div>
                                             </td>
                                         </tr>
                                         <tr>
@@ -667,27 +755,43 @@
                                             </td>
                                             <td>
                                                 <div class="d-flex align-items-center">
-                                                    <div class="avatar avatar-image avatar-sm m-r-10">
-                                                        <img src="assets/images/avatars/thumb-9.jpg" alt="">
-                                                    </div>
                                                     <h6 class="m-b-0">Victor Terry</h6>
                                                 </div>
                                             </td>
                                             <td>12 April 2019</td>
-                                            <td>$569.00</td>
+                                            <td>&#8358;569.00</td>
                                             <td>
                                                 <div class="d-flex align-items-center">
                                                     <div class="badge badge-success badge-dot m-r-10"></div>
                                                     <div>Approved</div>
                                                 </div>
                                             </td>
-                                            <td class="text-right">
-                                                <button class="btn btn-icon btn-hover btn-sm btn-rounded pull-right">
-                                                    <i class="anticon anticon-edit"></i>
-                                                </button>
-                                                <button class="btn btn-icon btn-hover btn-sm btn-rounded">
-                                                    <i class="anticon anticon-delete"></i>
-                                                </button>
+                                           <td class="text-right">
+                                                <div class="dropdown">
+                                                    <button class="btn btn-primary dropdown-toggle"  data-toggle="dropdown">
+                                                        <span>Action</span>
+                                                    </button>
+                                                    <div class="dropdown-menu">
+                                                        <a class="dropdown-item" href="./invoice.html">
+                                                            <button class="btn btn-icon btn-hover btn-sm btn-rounded pull-right">
+                                                                <i class="anticon anticon-eye"></i> 
+                                                            </button>
+                                                            View Invoice
+                                                        </a>
+                                                         <a class="dropdown-item" href="#" data-toggle="modal" data-target="#exampleModal">
+                                                             <button class="btn btn-icon btn-hover btn-sm btn-rounded pull-right">
+                                                                <i class="anticon anticon-edit"></i> 
+                                                            </button>
+                                                            Change Status
+                                                        </a>
+                                                         <a class="dropdown-item" href="#">
+                                                             <button class="btn btn-icon btn-hover btn-sm btn-rounded pull-right">
+                                                                <i class="anticon anticon-close"></i> 
+                                                            </button>
+                                                            Cancel Order
+                                                        </a>
+                                                    </div>
+                                                </div>
                                             </td>
                                         </tr>
                                         <tr>
@@ -702,27 +806,43 @@
                                             </td>
                                             <td>
                                                 <div class="d-flex align-items-center">
-                                                    <div class="avatar avatar-image avatar-sm m-r-10">
-                                                        <img src="assets/images/avatars/thumb-10.jpg" alt="">
-                                                    </div>
                                                     <h6 class="m-b-0">Wyatt Wallace</h6>
                                                 </div>
                                             </td>
                                             <td>10 April 2019</td>
-                                            <td>$132.00</td>
+                                            <td>&#8358;132.00</td>
                                             <td>
                                                 <div class="d-flex align-items-center">
                                                     <div class="badge badge-success badge-dot m-r-10"></div>
                                                     <div>Approved</div>
                                                 </div>
                                             </td>
-                                            <td class="text-right">
-                                                <button class="btn btn-icon btn-hover btn-sm btn-rounded pull-right">
-                                                    <i class="anticon anticon-edit"></i>
-                                                </button>
-                                                <button class="btn btn-icon btn-hover btn-sm btn-rounded">
-                                                    <i class="anticon anticon-delete"></i>
-                                                </button>
+                                           <td class="text-right">
+                                                <div class="dropdown">
+                                                    <button class="btn btn-primary dropdown-toggle"  data-toggle="dropdown">
+                                                        <span>Action</span>
+                                                    </button>
+                                                    <div class="dropdown-menu">
+                                                        <a class="dropdown-item" href="./invoice.html">
+                                                            <button class="btn btn-icon btn-hover btn-sm btn-rounded pull-right">
+                                                                <i class="anticon anticon-eye"></i> 
+                                                            </button>
+                                                            View Invoice
+                                                        </a>
+                                                         <a class="dropdown-item" href="#" data-toggle="modal" data-target="#exampleModal">
+                                                             <button class="btn btn-icon btn-hover btn-sm btn-rounded pull-right">
+                                                                <i class="anticon anticon-edit"></i> 
+                                                            </button>
+                                                            Change Status
+                                                        </a>
+                                                         <a class="dropdown-item" href="#">
+                                                             <button class="btn btn-icon btn-hover btn-sm btn-rounded pull-right">
+                                                                <i class="anticon anticon-close"></i> 
+                                                            </button>
+                                                            Cancel Order
+                                                        </a>
+                                                    </div>
+                                                </div>
                                             </td>
                                         </tr>
                                     </tbody>
@@ -748,6 +868,40 @@
             </div>
             <!-- Page Container END -->
 
+            <div class="modal fade" id="exampleModal">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Change Invoice Status</h5>
+                            <button type="button" class="close" data-dismiss="modal">
+                                <i class="anticon anticon-close"></i>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <form action="#">
+                                    <h5>Invoice No.: <p>#3882</p></h5>
+                                    <h5>Customer Name: <p>Sanji</p></h5>
+                                    <h5>Current Status: <p>Pending</p></h5>
+                                    <hr>
+                                    <div class="form-group">
+                                        <label for="status">Status <span class="required-feilds">*</span></label>
+                                        <select class="custom-select" style="min-width: 180px;" id="status" class="category" required>
+                                            <option selected value="">Select Status</option>
+                                            <option value="pending">Pending</option>
+                                            <option value="approved">Approved</option>
+                                            <option value="completed">Completed</option>
+                                            <option value="rejected">Rejected</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                    <input type="submit" value="Change Status" class="btn btn-primary"></input>
+                                </div>
+                            </form>
+                    </div>
+                </div>
+            </div>
             <!-- Search Start-->
             <div class="modal modal-left fade search" id="search-drawer">
                 <div class="modal-dialog">

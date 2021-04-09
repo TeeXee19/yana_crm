@@ -228,12 +228,15 @@
                                     <i class="arrow-icon"></i>
                                 </span>
                             </a>
-                            <ul class="dropdown-menu">
-                                <li>
-                                    <a href="create-order.html">Create Orders</a>
+                              <ul class="dropdown-menu">
+                                <li >
+                                    <a href="create-order.html">Create Order</a>
                                 </li>
-                                <li>
-                                    <a href="order.html">Orders List</a>
+                                <li >
+                                    <a href="order.html">Order</a>
+                                </li>
+                                   <li >
+                                    <a href="cancelled-orders.html">Cancelled Orders</a>
                                 </li>
                             </ul>
                         </li>
@@ -260,57 +263,13 @@
                                 </li>
                             </ul>
                         </li>
-
-                      
-                        <li class="nav-item dropdown">
-                            <a class="dropdown-toggle" href="javascript:void(0);">
+                         <li class="nav-item ">
+                            <a href="interactions.html">
                                 <span class="icon-holder">
-                                    <i class="anticon anticon-form"></i>
+                                    <i class="anticon anticon-reconciliation"></i>
                                 </span>
-                                <span class="title">Forms</span>
-                                <span class="arrow">
-                                    <i class="arrow-icon"></i>
-                                </span>
+                                <span class="title" >Interactions</span>
                             </a>
-                            <ul class="dropdown-menu">
-                                <li>
-                                    <a href="form-elements.html">Form Elements</a>
-                                </li>
-                                <li>
-                                    <a href="form-layouts.html">Form Layouts</a>
-                                </li>
-                                <li>
-                                    <a href="form-validation.html">Form Validation</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="dropdown-toggle" href="javascript:void(0);">
-                                <span class="icon-holder">
-                                    <i class="anticon anticon-file"></i>
-                                </span>
-                                <span class="title">Pages</span>
-                                <span class="arrow">
-                                    <i class="arrow-icon"></i>
-                                </span>
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li>
-                                    <a href="profile.html">Profile</a>
-                                </li>
-                                <li>
-                                    <a href="invoice.html">Invoice</a>
-                                </li>
-                                <li>
-                                    <a href="members.html">Members</a>
-                                </li>
-                                <li>
-                                    <a href="pricing.html">Pricing</a>
-                                </li>
-                                <li>
-                                    <a href="setting.html">Setting</a>
-                                </li>
-                            </ul>
                         </li>
                     </ul>
                 </div>
@@ -324,12 +283,12 @@
                 <!-- Content Wrapper START -->
                 <div class="main-content">
                     <div class="row">
-                        <div class="col-md-6 col-lg-3">
+                        <div class="col-md-6 col-lg-4">
                             <div class="card">
                                 <div class="card-body">
                                     <div class="d-flex justify-content-between align-items-center">
                                         <div>
-                                            <p class="m-b-0">Revenue</p>
+                                            <p class="m-b-0">Total Revenue</p>
                                             <h2 class="m-b-0">
                                                 <span>&#8358;14,966</span>
                                             </h2>
@@ -341,29 +300,12 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-6 col-lg-3">
+                        <div class="col-md-6 col-lg-4">
                             <div class="card">
                                 <div class="card-body">
                                     <div class="d-flex justify-content-between align-items-center">
                                         <div>
-                                            <p class="m-b-0">Completed Order</p>
-                                            <h2 class="m-b-0">
-                                                <span>2451</span>
-                                            </h2>
-                                        </div>
-                                        <div class="avatar avatar-icon avatar-lg avatar-cyan">
-                                            <i class="anticon anticon-bar-chart"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-lg-3">
-                            <div class="card">
-                                <div class="card-body">
-                                    <div class="d-flex justify-content-between align-items-center">
-                                        <div>
-                                            <p class="m-b-0">Pending Orders</p>
+                                            <p class="m-b-0">Today's Order</p>
                                             <h2 class="m-b-0">
                                                 <span>19</span>
                                             </h2>
@@ -375,7 +317,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-6 col-lg-3">
+                        <div class="col-md-6 col-lg-4">
                             <div class="card">
                                 <div class="card-body">
                                     <div class="d-flex justify-content-between align-items-center">
@@ -417,7 +359,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-12">
+                        <div class="col-lg-8">
                             <div class="card">
                                 <div class="card-body">
                                     <div class="d-md-flex justify-content-between align-items-center">
@@ -454,6 +396,17 @@
                                     <div class="d-flex justify-content-center align-items-center">
                                         <span class="badge badge-success badge-dot m-r-10"></span>
                                         <span><span class="font-weight-semibold">70%</span> of Your Goal</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-12 col-lg-4">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="m-b-0">Customers</h5>
+                                    <div class="text-center">
+                                        <div class="ct-chart" id="donut-chart"></div>
                                     </div>
                                 </div>
                             </div>
@@ -786,8 +739,25 @@
     <script src="assets/vendors/chartjs/Chart.min.js"></script>
     <script src="assets/js/pages/dashboard-crm.js"></script>
 
+    <script src="assets/vendors/chartist/chartist.min.js"></script>
     <!-- Core JS -->
     <script src="assets/js/app.min.js"></script>
+
+    <script>
+        
+
+new Chartist.Pie('#donut-chart', {
+    series: [40, 10, 30, 20]
+    }, {
+    donut: true,
+    donutWidth: 60,
+    donutSolid: true,
+    startAngle: 270,
+    showLabel: true
+});
+
+
+    </script>
 
 </body>
 

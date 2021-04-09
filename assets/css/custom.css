@@ -11,3 +11,8 @@
 .required-feilds{
 	color: red;
 }
+
+.add-item-btn{
+	display: flex;
+	justify-content: end;
+}

@@ -188,8 +188,8 @@
             <div class="side-nav">
                 <div class="side-nav-inner">
                     <ul class="side-nav-menu scrollable">
-                        <li class="nav-item">
-                            <a class="dropdown-toggle" href="index.html">
+                        <li class="nav-item ">
+                            <a  href="index.html">
                                 <span class="icon-holder">
                                     <i class="anticon anticon-dashboard"></i>
                                 </span>
@@ -210,7 +210,7 @@
                                 <li>
                                     <a href="create-customer.html">Create Customer</a>
                                 </li>
-                                <li class="active">
+                                <li >
                                     <a href="customers.html">Customer List</a>
                                 </li>
                                 <li>
@@ -229,13 +229,13 @@
                                 </span>
                             </a>
                             <ul class="dropdown-menu">
-                                <li >
-                                    <a href="create-order.html">Create Order</a>
+                                <li>
+                                    <a href="create-order.html">Create Orders</a>
                                 </li>
                                 <li >
-                                    <a href="order.html">Order</a>
+                                    <a href="order.html">Orders List</a>
                                 </li>
-                                   <li >
+                                <li class="active">
                                     <a href="cancelled-orders.html">Cancelled Orders</a>
                                 </li>
                             </ul>
@@ -263,20 +263,11 @@
                                 </li>
                             </ul>
                         </li>
-                        <li class="nav-item">
-                            <a href="interactions.html">
-                                <span class="icon-holder">
-                                    <i class="anticon anticon-reconciliation"></i>
-                                </span>
-                                <span class="title" >Interactions</span>
-                            </a>
-                        </li>
-
-                      
                     </ul>
                 </div>
             </div>
             <!-- Side Nav END -->
+
 
             <!-- Page Container START -->
             <div class="page-container">
@@ -284,23 +275,23 @@
                 <!-- Content Wrapper START -->
                 <div class="main-content">
                     <div class="page-header">
-                        <h2 class="header-title">Customers</h2>
+                        <h2 class="header-title">Cancelled Orders</h2>
                         <div class="header-sub-title">
                             <nav class="breadcrumb breadcrumb-dash">
                                 <a href="#" class="breadcrumb-item"><i class="anticon anticon-home m-r-5"></i>Home</a>
-                                <a class="breadcrumb-item" href="#">Customers</a>
-                                <span class="breadcrumb-item active">Customer List</span>
+                                <a class="breadcrumb-item" href="#">Order</a>
+                                <span class="breadcrumb-item active">Cancelled Orders</span>
                             </nav>
                         </div>
                     </div>
                     <div class="card">
-                        <div class="card-body">   
-                            <div class="float-right text-right m-b-30">
-                                <button class="btn btn-primary">
-                                    <i class="anticon anticon-file-excel m-r-5"></i>
-                                    <span>Export</span>
-                                </button>
-                            </div>
+                        <div class="card-body">
+                                <div class="text-right float-right m-b-30">
+                                    <button class="btn btn-primary">
+                                        <i class="anticon anticon-file-excel m-r-5"></i>
+                                        <span>Export</span>
+                                    </button>
+                                </div>
                             <div class="table-responsive">
                                 <table class="table table-hover e-commerce-table">
                                     <thead>
@@ -312,10 +303,10 @@
                                                 </div>
                                             </th>
                                             <th>ID</th>
-                                            <th>Customer Name</th>
-                                            <th>Phone No</th>
-                                            <th>Address</th>
-                                            <th></th>
+                                            <th>Customer</th>
+                                            <th>Date of Cancellation</th>
+                                            <th>Amount</th>
+                                            <th>Action</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -334,21 +325,14 @@
                                                     <h6 class="m-b-0">Erin Gonzales</h6>
                                                 </div>
                                             </td>
-                                            <td>08099338843</td>
-                                            <td>No. 2 My House Road, Somewhere</td>
+                                            <td>8 May 2019</td>
+                                            <td>&#8358;137.00</td>
                                             <td class="text-right">
-                                                <button class="btn btn-icon btn-hover btn-sm btn-rounded pull-right" onclick="location.href='./view-customer.html';">
-                                                    <i class="anticon anticon-eye" data-toggle="tooltip" data-placement="bottom" title="View"></i>
-                                                </button>
-                                                <button class="btn btn-icon btn-hover btn-sm btn-rounded pull-right">
-                                                    <i class="anticon anticon-edit" data-toggle="tooltip" data-placement="bottom" title="Edit"></i>
-                                                </button>
                                                 <button class="btn btn-icon btn-hover btn-sm btn-rounded">
-                                                    <i class="anticon anticon-delete" data-toggle="tooltip" data-placement="bottom" title="Delete"></i>
+                                                    <i class="anticon anticon-undo"></i>
                                                 </button>
                                             </td>
                                         </tr>
-
                                         <tr>
                                             <td>
                                                 <div class="checkbox">
@@ -361,23 +345,18 @@
                                             </td>
                                             <td>
                                                 <div class="d-flex align-items-center">
-                                                    <h6 class="m-b-0">Monkey D. Luffy</h6>
+                                                    <h6 class="m-b-0">Erin Gonzales</h6>
                                                 </div>
                                             </td>
-                                            <td>08099338843</td>
-                                            <td>East Blue</td>
+                                            <td>8 May 2019</td>
+                                            <td>&#8358;137.00</td>
                                             <td class="text-right">
-                                                <button class="btn btn-icon btn-hover btn-sm btn-rounded pull-right">
-                                                    <i class="anticon anticon-eye" data-toggle="tooltip" data-placement="bottom" title="View"></i>
-                                                </button>
-                                                <button class="btn btn-icon btn-hover btn-sm btn-rounded pull-right">
-                                                    <i class="anticon anticon-edit" data-toggle="tooltip" data-placement="bottom" title="Edit"></i>
-                                                </button>
                                                 <button class="btn btn-icon btn-hover btn-sm btn-rounded">
-                                                    <i class="anticon anticon-delete" data-toggle="tooltip" data-placement="bottom" title="Delete"></i>
+                                                    <i class="anticon anticon-undo"></i>
                                                 </button>
                                             </td>
                                         </tr>
+                                        
                                     </tbody>
                                 </table>
                             </div>
@@ -401,6 +380,40 @@
             </div>
             <!-- Page Container END -->
 
+            <div class="modal fade" id="exampleModal">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Change Invoice Status</h5>
+                            <button type="button" class="close" data-dismiss="modal">
+                                <i class="anticon anticon-close"></i>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <form action="#">
+                                    <h5>Invoice No.: <p>#3882</p></h5>
+                                    <h5>Customer Name: <p>Sanji</p></h5>
+                                    <h5>Current Status: <p>Pending</p></h5>
+                                    <hr>
+                                    <div class="form-group">
+                                        <label for="status">Status <span class="required-feilds">*</span></label>
+                                        <select class="custom-select" style="min-width: 180px;" id="status" class="category" required>
+                                            <option selected value="">Select Status</option>
+                                            <option value="pending">Pending</option>
+                                            <option value="approved">Approved</option>
+                                            <option value="completed">Completed</option>
+                                            <option value="rejected">Rejected</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                    <input type="submit" value="Change Status" class="btn btn-primary"></input>
+                                </div>
+                            </form>
+                    </div>
+                </div>
+            </div>
             <!-- Search Start-->
             <div class="modal modal-left fade search" id="search-drawer">
                 <div class="modal-dialog">

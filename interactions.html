@@ -12,6 +12,7 @@
     <!-- page css -->
     <link href="assets/vendors/datatables/dataTables.bootstrap.min.css" rel="stylesheet">
 
+
     <!-- Core css -->
     <link href="assets/css/app.min.css" rel="stylesheet">
     <link href="assets/css/custom.css" rel="stylesheet">
@@ -188,8 +189,8 @@
             <div class="side-nav">
                 <div class="side-nav-inner">
                     <ul class="side-nav-menu scrollable">
-                        <li class="nav-item">
-                            <a class="dropdown-toggle" href="index.html">
+                        <li class="nav-item ">
+                            <a  href="index.html">
                                 <span class="icon-holder">
                                     <i class="anticon anticon-dashboard"></i>
                                 </span>
@@ -210,7 +211,7 @@
                                 <li>
                                     <a href="create-customer.html">Create Customer</a>
                                 </li>
-                                <li class="active">
+                                <li >
                                     <a href="customers.html">Customer List</a>
                                 </li>
                                 <li>
@@ -229,13 +230,13 @@
                                 </span>
                             </a>
                             <ul class="dropdown-menu">
-                                <li >
-                                    <a href="create-order.html">Create Order</a>
+                                <li>
+                                    <a href="create-order.html">Create Orders</a>
                                 </li>
                                 <li >
-                                    <a href="order.html">Order</a>
+                                    <a href="order.html">Orders List</a>
                                 </li>
-                                   <li >
+                                <li >
                                     <a href="cancelled-orders.html">Cancelled Orders</a>
                                 </li>
                             </ul>
@@ -263,20 +264,19 @@
                                 </li>
                             </ul>
                         </li>
-                        <li class="nav-item">
-                            <a href="interactions.html">
+                         <li class="nav-item active">
+                            <a class="active" href="interactions.html">
                                 <span class="icon-holder">
                                     <i class="anticon anticon-reconciliation"></i>
                                 </span>
                                 <span class="title" >Interactions</span>
                             </a>
                         </li>
-
-                      
                     </ul>
                 </div>
             </div>
             <!-- Side Nav END -->
+
 
             <!-- Page Container START -->
             <div class="page-container">
@@ -284,25 +284,25 @@
                 <!-- Content Wrapper START -->
                 <div class="main-content">
                     <div class="page-header">
-                        <h2 class="header-title">Customers</h2>
+                        <h2 class="header-title">Cancelled Orders</h2>
                         <div class="header-sub-title">
                             <nav class="breadcrumb breadcrumb-dash">
                                 <a href="#" class="breadcrumb-item"><i class="anticon anticon-home m-r-5"></i>Home</a>
-                                <a class="breadcrumb-item" href="#">Customers</a>
-                                <span class="breadcrumb-item active">Customer List</span>
+                                <a class="breadcrumb-item" href="#">Order</a>
+                                <span class="breadcrumb-item active">Cancelled Orders</span>
                             </nav>
                         </div>
                     </div>
                     <div class="card">
-                        <div class="card-body">   
-                            <div class="float-right text-right m-b-30">
-                                <button class="btn btn-primary">
-                                    <i class="anticon anticon-file-excel m-r-5"></i>
-                                    <span>Export</span>
-                                </button>
-                            </div>
+                        <div class="card-body">
+                                <div class="text-right float-right m-b-30">
+                                    <button class="btn btn-primary" data-toggle="modal" data-target="#addInteraction">
+                                        <i class="anticon anticon-plus m-r-5"></i>
+                                        <span>Add Interaction</span>
+                                    </button>
+                                </div>
                             <div class="table-responsive">
-                                <table class="table table-hover e-commerce-table">
+                                <table class="table table-hover " id="interaction">
                                     <thead>
                                         <tr>
                                             <th>
@@ -313,8 +313,10 @@
                                             </th>
                                             <th>ID</th>
                                             <th>Customer Name</th>
-                                            <th>Phone No</th>
-                                            <th>Address</th>
+                                            <th>Description</th>
+                                            <th>Category</th>
+                                            <th>Date</th>
+                                            <th>Status</th>
                                             <th></th>
                                         </tr>
                                     </thead>
@@ -326,29 +328,24 @@
                                                     <label for="check-item-1" class="m-b-0"></label>
                                                 </div>
                                             </td>
-                                            <td>
-                                                #5331
-                                            </td>
+                                            <td>#5331</td>
+                                            <td>Nami-san</td>
                                             <td>
                                                 <div class="d-flex align-items-center">
-                                                    <h6 class="m-b-0">Erin Gonzales</h6>
+                                                    <div class="d-flex align-items-center">
+                                                        <h6 class="m-l-10 m-b-0">Is it by Force?</h6>
+                                                    </div>
                                                 </div>
                                             </td>
-                                            <td>08099338843</td>
-                                            <td>No. 2 My House Road, Somewhere</td>
-                                            <td class="text-right">
-                                                <button class="btn btn-icon btn-hover btn-sm btn-rounded pull-right" onclick="location.href='./view-customer.html';">
-                                                    <i class="anticon anticon-eye" data-toggle="tooltip" data-placement="bottom" title="View"></i>
-                                                </button>
-                                                <button class="btn btn-icon btn-hover btn-sm btn-rounded pull-right">
-                                                    <i class="anticon anticon-edit" data-toggle="tooltip" data-placement="bottom" title="Edit"></i>
-                                                </button>
-                                                <button class="btn btn-icon btn-hover btn-sm btn-rounded">
-                                                    <i class="anticon anticon-delete" data-toggle="tooltip" data-placement="bottom" title="Delete"></i>
-                                                </button>
+                                            <td>Request</td>
+                                            <td>8 May 2019</td>
+                                            <td>
+                                                <div class="d-flex align-items-center">
+                                                    <span class="badge badge-success badge-dot m-r-10"></span>
+                                                    <span>Closed</span>
+                                                </div>
                                             </td>
                                         </tr>
-
                                         <tr>
                                             <td>
                                                 <div class="checkbox">
@@ -356,28 +353,24 @@
                                                     <label for="check-item-1" class="m-b-0"></label>
                                                 </div>
                                             </td>
-                                            <td>
-                                                #5331
-                                            </td>
+                                            <td>#5331</td>
+                                            <td>Sanji-kun</td>
                                             <td>
                                                 <div class="d-flex align-items-center">
-                                                    <h6 class="m-b-0">Monkey D. Luffy</h6>
+                                                    <div class="d-flex align-items-center">
+                                                        <h6 class="m-l-10 m-b-0">E don be.</h6>
+                                                    </div>
                                                 </div>
                                             </td>
-                                            <td>08099338843</td>
-                                            <td>East Blue</td>
-                                            <td class="text-right">
-                                                <button class="btn btn-icon btn-hover btn-sm btn-rounded pull-right">
-                                                    <i class="anticon anticon-eye" data-toggle="tooltip" data-placement="bottom" title="View"></i>
-                                                </button>
-                                                <button class="btn btn-icon btn-hover btn-sm btn-rounded pull-right">
-                                                    <i class="anticon anticon-edit" data-toggle="tooltip" data-placement="bottom" title="Edit"></i>
-                                                </button>
-                                                <button class="btn btn-icon btn-hover btn-sm btn-rounded">
-                                                    <i class="anticon anticon-delete" data-toggle="tooltip" data-placement="bottom" title="Delete"></i>
-                                                </button>
+                                            <td>Enquiry</td>
+                                            <td>10 June 2021</td>
+                                            <td>
+                                                <div class="d-flex align-items-center">
+                                                    <span class="badge badge-success badge-dot m-r-10"></span>
+                                                    <span>Open</span>
+                                                </div>
                                             </td>
-                                        </tr>
+                                        </tr>                 
                                     </tbody>
                                 </table>
                             </div>
@@ -401,6 +394,69 @@
             </div>
             <!-- Page Container END -->
 
+            <div class="modal fade" id="addInteraction">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Create Interaction</h5>
+                            <button type="button" class="close" data-dismiss="modal">
+                                <i class="anticon anticon-close"></i>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <form action="#">
+                                    
+                                 <div class="form-group ">
+                                    <label for="customerName">Customer Name <span class="required-feilds">*</span></label>
+                                    <select class="custom-select" style="min-width: 180px;" id="customerName" class="customerName" required>
+                                        <option selected value="">Select Customer</option>
+                                        <option value="johndoe">John Doe</option>
+                                        <option value="mkl">Monkey D. Luffy</option>
+                                    </select>
+                                </div>
+                                <div class="form-group ">
+                                    <label for="subject">Subject <span class="required-feilds">*</span></label>
+                                    <input type="text" name="subject" class="form-control" id="subject" placeholder="Subject" required>
+                                </div>
+
+                                <div class="form-row">
+                                        <div class="form-group col-md-6">
+                                            <label for="interactionCategory">Interaction Category <span class="required-feilds">*</span></label>
+                                            <select class="custom-select" style="min-width: 180px;" id="interactionCategory" class="interactionCategory" required>
+                                                <option selected>Select Category</option>
+                                                <option value="Enquiry">Enquiry</option>
+                                                <option value="Request">Request</option>
+                                                <option value="Complaint">Complaint</option>
+                                                <option value="Recommendation">Recommendation</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group col-md-6">
+                                            <label for="incStatus">Status <span class="required-feilds">*</span></label>
+                                            <select class="custom-select" style="min-width: 180px;" id="incStatus" class="incStatus" required>
+                                                <option selected>Select Status</option>
+                                                <option value="open">Open</option>
+                                                <option value="closed">Closed</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                            <label>Description <span class="required-feilds">*</span></label>
+                                            <textarea name="description" id="description" class="form-control" placeholder="Description"></textarea>
+                                        </div>
+
+
+
+
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                    <input type="submit" value="Save" class="btn btn-primary"></input>
+                                </div>
+                            </form>
+                    </div>
+                </div>
+            </div>
             <!-- Search Start-->
             <div class="modal modal-left fade search" id="search-drawer">
                 <div class="modal-dialog">
@@ -573,11 +629,19 @@
     <!-- page js -->
     <script src="assets/vendors/datatables/jquery.dataTables.min.js"></script>
     <script src="assets/vendors/datatables/dataTables.bootstrap.min.js"></script>
-    <script src="assets/js/pages/e-commerce-order-list.js"></script>
 
     <!-- Core JS -->
     <script src="assets/js/app.min.js"></script>
 
+     <script>
+
+         $('#interaction').DataTable({
+            "lengthMenu": [[5, 10, 25, 50, -1], [5, 10, 25, 50, "All"]]
+         });
+          $("#checkAll").on('change',function(){
+            $('#interaction input[type="checkbox"]').prop('checked',$(this).is(":checked"));
+        }); 
+    </script>
 </body>
 
 </html>
