@@ -284,12 +284,11 @@
                 <!-- Content Wrapper START -->
                 <div class="main-content">
                     <div class="page-header">
-                        <h2 class="header-title">Cancelled Orders</h2>
+                        <h2 class="header-title">Interactions</h2>
                         <div class="header-sub-title">
                             <nav class="breadcrumb breadcrumb-dash">
                                 <a href="#" class="breadcrumb-item"><i class="anticon anticon-home m-r-5"></i>Home</a>
-                                <a class="breadcrumb-item" href="#">Order</a>
-                                <span class="breadcrumb-item active">Cancelled Orders</span>
+                                <span class="breadcrumb-item active">Interaction</span>
                             </nav>
                         </div>
                     </div>
@@ -298,7 +297,7 @@
                                 <div class="text-right float-right m-b-30">
                                     <button class="btn btn-primary" data-toggle="modal" data-target="#addInteraction">
                                         <i class="anticon anticon-plus m-r-5"></i>
-                                        <span>Add Interaction</span>
+                                        <span>Add New</span>
                                     </button>
                                 </div>
                             <div class="table-responsive">
@@ -345,6 +344,14 @@
                                                     <span>Closed</span>
                                                 </div>
                                             </td>
+                                             <td class="text-right">
+                                                <button class="btn btn-icon btn-hover btn-sm btn-rounded pull-right" data-toggle="modal" data-target="#viewInteraction">
+                                                    <i class="anticon anticon-eye"></i>
+                                                </button>
+                                                <button class="btn btn-icon btn-hover btn-sm btn-rounded">
+                                                    <i class="anticon anticon-delete"></i>
+                                                </button>
+                                            </td>
                                         </tr>
                                         <tr>
                                             <td>
@@ -369,6 +376,14 @@
                                                     <span class="badge badge-success badge-dot m-r-10"></span>
                                                     <span>Open</span>
                                                 </div>
+                                            </td>
+                                             <td class="text-right">
+                                                <button class="btn btn-icon btn-hover btn-sm btn-rounded pull-right">
+                                                    <i class="anticon anticon-eye"></i>
+                                                </button>
+                                                <button class="btn btn-icon btn-hover btn-sm btn-rounded">
+                                                    <i class="anticon anticon-delete"></i>
+                                                </button>
                                             </td>
                                         </tr>                 
                                     </tbody>
@@ -454,6 +469,68 @@
                                     <input type="submit" value="Save" class="btn btn-primary"></input>
                                 </div>
                             </form>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="modal fade" id="viewInteraction">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Create Interaction</h5>
+                            <button type="button" class="close" data-dismiss="modal">
+                                <i class="anticon anticon-close"></i>
+                            </button>
+                        </div>
+                        <div class="modal-body">                                    
+                                 <div class="form-group ">
+                                    <label for="customerName">Customer Name <span class="required-feilds">*</span></label>
+                                    <select class="custom-select" style="min-width: 180px;" id="customerName" class="customerName" disabled>
+                                        <option  value="">Select Customer</option>
+                                        <option value="johndoe">John Doe</option>
+                                        <option selected value="mkl">Monkey D. Luffy</option>
+                                    </select>
+                                </div>
+                                <div class="form-group ">
+                                    <label for="subject">Subject <span class="required-feilds">*</span></label>
+                                    <input type="text" name="subject" class="form-control" id="subject" placeholder="Why na?" disabled>
+                                </div>
+
+                                <div class="form-row">
+                                        <div class="form-group col-md-6">
+                                            <label for="interactionCategory">Interaction Category <span class="required-feilds">*</span></label>
+                                            <select class="custom-select" style="min-width: 180px;" id="interactionCategory" class="interactionCategory" disabled>
+                                                <option >Select Category</option>
+                                                <option selected value="Enquiry">Enquiry</option>
+                                                <option value="Request">Request</option>
+                                                <option value="Complaint">Complaint</option>
+                                                <option value="Recommendation">Recommendation</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group col-md-6">
+                                            <label for="incStatus">Status <span class="required-feilds">*</span></label>
+                                            <select class="custom-select" style="min-width: 180px;" id="incStatus" class="incStatus" disabled>
+                                                <option selected>Select Status</option>
+                                                <option value="open">Open</option>
+                                                <option value="closed">Closed</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                            <label>Description <span class="required-feilds">*</span></label>
+                                            <textarea name="description" id="description" class="form-control" placeholder="Abeg I no do again, is it by force?" disabled></textarea>
+                                        </div>
+
+
+
+
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                    <button type="button" class="btn btn-primary">Edit</button>
+                                </div>
                     </div>
                 </div>
             </div>
