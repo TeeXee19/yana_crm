@@ -362,6 +362,12 @@
                     <div class="container">
                         <div class="tab-content m-t-15">
                             <div class="tab-pane fade show active" id="tab-order" >
+                                <div class="float-right text-right m-b-30">
+                                <button class="btn btn-primary">
+                                    <i class="anticon anticon-file-excel m-r-5"></i>
+                                    <span>Create Order</span>
+                                </button>
+                            </div>
                             <div class="table-responsive">
                                 <table class="table table-hover" id="customerOrder">
                                     <thead>
@@ -738,6 +744,12 @@
                             
                            <!-- Interaction Begins -->
                             <div class="tab-pane fade" id="tab-security">
+                                <div class="float-right text-right m-b-30">
+                                <button class="btn btn-primary" data-toggle="modal" data-target="#addInteraction">
+                                    <i class="anticon anticon-plus m-r-5"></i>
+                                    <span>Add Interaction</span>
+                                </button>
+                            </div>
                                 <div class="table-responsive">
                                     <table class="table table-hover" id="customerInteraction">
                                         <thead>
@@ -811,6 +823,76 @@
 
             </div>
             <!-- Page Container END -->
+
+            <!-- Add Interaction Starts -->
+            
+
+            <div class="modal fade" id="addInteraction">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Create Interaction</h5>
+                            <button type="button" class="close" data-dismiss="modal">
+                                <i class="anticon anticon-close"></i>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <form action="#">
+                              <!--       
+                                 <div class="form-group ">
+                                    <label for="customerName">Customer Name <span class="required-feilds">*</span></label>
+                                    <select class="custom-select" style="min-width: 180px;" id="customerName" class="customerName" required>
+                                        <option selected value="">Select Customer</option>
+                                        <option value="johndoe">John Doe</option>
+                                        <option value="mkl">Monkey D. Luffy</option>
+                                    </select>
+                                </div> -->
+                                <div class="form-group ">
+                                    <label for="subject">Subject <span class="required-feilds">*</span></label>
+                                    <input type="text" name="subject" class="form-control" id="subject" placeholder="Subject" required>
+                                </div>
+
+                                <div class="form-row">
+                                        <div class="form-group col-md-6">
+                                            <label for="interactionCategory">Interaction Category <span class="required-feilds">*</span></label>
+                                            <select class="custom-select" style="min-width: 180px;" id="interactionCategory" class="interactionCategory" required>
+                                                <option selected>Select Category</option>
+                                                <option value="Enquiry">Enquiry</option>
+                                                <option value="Request">Request</option>
+                                                <option value="Complaint">Complaint</option>
+                                                <option value="Recommendation">Recommendation</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group col-md-6">
+                                            <label for="incStatus">Status <span class="required-feilds">*</span></label>
+                                            <select class="custom-select" style="min-width: 180px;" id="incStatus" class="incStatus" required>
+                                                <option selected>Select Status</option>
+                                                <option value="open">Open</option>
+                                                <option value="closed">Closed</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                            <label>Description <span class="required-feilds">*</span></label>
+                                            <textarea name="description" id="description" class="form-control" placeholder="Description"></textarea>
+                                        </div>
+
+
+
+
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                    <input type="submit" value="Save" class="btn btn-primary"></input>
+                                </div>
+                            </form>
+                    </div>
+                </div>
+            </div>
+            <!-- Add Interaction Ends -->
+
+
 
             <!-- Search Start-->
             <div class="modal modal-left fade search" id="search-drawer">
