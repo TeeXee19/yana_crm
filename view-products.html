@@ -302,7 +302,7 @@
                                 </div>
                             </div>
                             <div class="m-b-15">
-                                <button class="btn btn-primary">
+                                <button class="btn btn-primary" data-toggle="modal" data-target="#editProduct">
                                     <i class="anticon anticon-edit"></i>
                                     <span>Edit</span>
                                 </button>
@@ -321,26 +321,7 @@
                         <div class="tab-content m-t-15">
                             <div class="tab-pane fade show active" id="product-overview" >
                                 <div class="row">
-                                    <div class="col-md-3">
-                                        <div class="card">
-                                            <div class="card-body">
-                                                <div class="media align-items-center">
-                                                    <i class="font-size-40 text-success anticon anticon-smile"></i>
-                                                    <div class="m-l-15">
-                                                        <p class="m-b-0 text-muted">10 ratings</p>
-                                                        <div class="star-rating m-t-5">
-                                                            <input type="radio" id="star3-5" name="rating-3" value="5" checked disabled/><label for="star3-5" title="5 star"></label>
-                                                            <input type="radio" id="star3-4" name="rating-3" value="4" disabled/><label for="star3-4" title="4 star"></label>
-                                                            <input type="radio" id="star3-3" name="rating-3" value="3" disabled/><label for="star3-3" title="3 star"></label>
-                                                            <input type="radio" id="star3-2" name="rating-3" value="2" disabled/><label for="star3-2" title="2 star"></label>
-                                                            <input type="radio" id="star3-1" name="rating-3" value="1" disabled/><label for="star3-1" title="1 star"></label>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-3">
+                                    <div class="col-md-6">
                                         <div class="card">
                                             <div class="card-body">
                                                 <div class="media align-items-center">
@@ -353,20 +334,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-md-3">
-                                        <div class="card">
-                                            <div class="card-body">
-                                                <div class="media align-items-center">
-                                                    <i class="font-size-40 text-primary anticon anticon-message"></i>
-                                                    <div class="m-l-15">
-                                                        <p class="m-b-0 text-muted">Reviews</p>
-                                                        <h3 class="m-b-0 ls-1">27</h3>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-3">
+                                    <div class="col-md-6">
                                         <div class="card">
                                             <div class="card-body">
                                                 <div class="media align-items-center">
@@ -387,20 +355,20 @@
                                             <table class="product-info-table m-t-20">
                                                 <tbody>
                                                     <tr>
-                                                        <td>Price:</td>
-                                                        <td class="text-dark font-weight-semibold">$199.00</td>
+                                                        <td>Cost Price:</td>
+                                                        <td class="text-dark font-weight-semibold">&#8358;180.00</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Selling Price:</td>
+                                                        <td class="text-dark font-weight-semibold">&#8358;199.00</td>
                                                     </tr>
                                                     <tr>
                                                         <td>Category:</td>
                                                         <td>	Cloths</td>
                                                     </tr>
                                                     <tr>
-                                                        <td>Brand:</td>
+                                                        <td>Product:</td>
                                                         <td>H&M</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Tax Rate:</td>
-                                                        <td>10%</td>
                                                     </tr>
                                                     <tr>
                                                         <td>Status:</td>
@@ -439,6 +407,86 @@
                                             </div>
                                         </div>
                                     </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                     <div class="modal fade" id="editProduct">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title">Update Product</h5>
+                                    <button type="button" class="close" data-dismiss="modal">
+                                        <i class="anticon anticon-close"></i>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <form>
+                                        <div class="form-group">
+                                            <label for="new-project-name">Product Name</label>
+                                            <input type="text" class="form-control" id="new-project-name" placeholder="Please input product name">
+                                        </div>
+                                        <div class="form-group ">
+                                            <label > Product Image</label>
+                                            <div class="custom-file">
+                                                <input type="file" class="custom-file-input" id="productImg" name="productImg" accept="image/*">
+                                                <label  class="custom-file-label" for="img">Select Product Image </label>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="form-group">
+                                           <label for="costPrice">Cost Price <span class="required">*</span></label>
+                                           <div class="input-group mb-3">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text">&#8358;</span>
+                                                </div>
+                                                <input type="text" class="form-control" aria-label="Amount (to the nearest Naira)" onkeypress="return /\d/.test(String.fromCharCode(((event||window.event).which||(event||window.event).which)));" name="costPrice" id="costPrice" required>
+                                                <div class="input-group-append">
+                                                    <span class="input-group-text">.00</span>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                           <label for="sellingPrice">Selling Price <span class="required">*</span></label>
+                                           <div class="input-group mb-3">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text">&#8358;</span>
+                                                </div>
+                                                <input type="text" class="form-control" aria-label="Amount (to the nearest Naira)" onkeypress="return /\d/.test(String.fromCharCode(((event||window.event).which||(event||window.event).which)));" name="sellingPrice" id="sellingPrice" required>
+                                                <div class="input-group-append">
+                                                    <span class="input-group-text">.00</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="category">Category <span class="required">*</span></label>
+                                            <select class="custom-select" style="min-width: 180px;" required>
+                                                <option selected>Select Category</option>
+                                                <option value="homeDeco">Home Decoration</option>
+                                                <option value="eletronic">Eletronic</option>
+                                                <option value="jewellery">Jewellery</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="availability">Availability <span class="required">*</span></label>
+                                            <select class="custom-select" style="min-width: 180px;" required>
+                                                <option selected>Select Availability</option>
+                                                <option value="inStock">In Stock</option>
+                                                <option value="outOfStock">Out Of Stock</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group ">
+                                        <label for="stockNo">Available Stock <span class="required">*</span></label>
+                                        <input type="text" class="form-control" id="stockNo" placeholder="Stock Available" onkeypress="return /\d/.test(String.fromCharCode(((event||window.event).which||(event||window.event).which)));" required>
+                                    </div> 
+                                    </form>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-primary">Update Product</button>
                                 </div>
                             </div>
                         </div>
@@ -634,6 +682,13 @@
 
     <!-- Core JS -->
     <script src="assets/js/app.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bs-custom-file-input/dist/bs-custom-file-input.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            bsCustomFileInput.init()
+        })  
+    </script>
 
 </body>
 
