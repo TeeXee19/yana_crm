@@ -288,7 +288,8 @@
                             <h4>Order Details</h4>
                             <div class="m-t-25">
                                 <form action="./invoice.html">
-                                    <div class="form-group ">
+                                    <div class="form-row">
+                                        <div class="form-group col-md-6">
                                             <label for="customerName">Customer Name <span class="required-feilds">*</span></label>
                                             <select class="custom-select" style="min-width: 180px;" id="customerName" class="customerName" required>
                                                 <option selected>Select Customer</option>
@@ -296,6 +297,12 @@
                                                 <option value="mkl">Monkey D. Luffy</option>
                                             </select>
                                         </div>
+                                        <div class="form-group col-md-6">
+                                            <label for="customerName">Customer Number <span class="required-feilds">*</span></label>
+                                            <input type="text" class="form-control" name="customerNumber" id="customerNumber" placeholder="0807 332 8472" onkeypress="return /\d/.test(String.fromCharCode(((event||window.event).which||(event||window.event).which)));" maxlength="11" required>
+                                        </div>
+                                    </div>
+                                    
                                         <hr>
                                     <div class="items">
                                     <div class="form-row">
@@ -333,7 +340,7 @@
                                     <div class="form-row">
                                         <div class="form-group col-md-4">
                                            <label for="productQuantity">Quantity <span class="required-feilds">*</span></label>
-                                                <input type="text" class="form-control" id="productQuantity" name="productQuantity" aria-label="Amount (to the nearest Naira)" onkeypress="return /\d/.test(String.fromCharCode(((event||window.event).which||(event||window.event).which)));" required>
+                                                <input type="text" class="form-control" id="productQuantity" name="productQuantity" onkeypress="return /\d/.test(String.fromCharCode(((event||window.event).which||(event||window.event).which)));" required>
                                         </div>
                                         <div class="form-group col-md-4">
                                            <label for="unitCost">Unit Cost </label>
